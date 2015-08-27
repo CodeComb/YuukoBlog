@@ -1,0 +1,10 @@
+﻿@if (Model != null && Model.GetType() != typeof(Post))
+{
+<div class="sidebar-module sidebar-about">
+    <h3>ABOUT</h3>
+    <div class="sidebar-body">
+        <div class="face"><img src="@ViewBag.AvatarUrl" width="180" height="180"></div>
+        <p><a href="@ViewBag.AboutUrl">Read more</a></p>
+    </div>
+</div>
+}

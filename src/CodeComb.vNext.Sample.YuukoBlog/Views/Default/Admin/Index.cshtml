@@ -1,0 +1,61 @@
+﻿@{
+    ViewBag.Title = "管理后台";
+}
+@if (Html.IsRaw())
+{
+    @(new HtmlString("<div>"))
+    <div id="raw_info">
+        <div class="role-title">管理后台</div>
+        <div class="role-body-class">home</div>
+        <div class="role-category">home</div>
+        <div class="role-head-title">
+            <h1>管理后台</h1>
+        </div>
+    </div>
+}
+<div class="cont-wrap">
+    <div class="grid_9">
+        <div class="post">
+            <div class="post-body">
+                <form asp-action="Index" asp-controller="Admin" method="post" id="frmConfig">
+                    <p>
+                        网站名称: <br />
+                        <input type="text" name="site" value="@ViewBag.Site" />
+                    </p>
+                    <p>
+                        网站介绍: <br />
+                        <input type="text" name="description" value="@ViewBag.Description" />
+                    </p>
+                    <p>
+                        头像URL: <br />
+                        <input type="text" name="avatarUrl" value="@ViewBag.AvatarUrl" />
+                    </p>
+                    <p>
+                        Disqus: <br />
+                        <input type="text" name="disqus" value="@ViewBag.Disqus" />
+                    </p>
+                    <p>
+                        关于URL: <br />
+                        <input type="text" name="aboutUrl" value="@ViewBag.AboutUrl" />
+                    </p>
+                    <p>
+                        用户名: <br />
+                        <input type="text" name="Account" value="@ViewBag.UserName" />
+                    </p>
+                    <p>
+                        密码: <br />
+                        <input type="password" name="password" value="" />
+                    </p>
+                    <p>
+                        <input type="button" value="保存" onclick="saveConfig()" />
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+    @Html.TemplatedPartial("/Shared/Sidebar");
+</div>
+@if (Html.IsRaw())
+{
+    @(new HtmlString("</div>"))
+}

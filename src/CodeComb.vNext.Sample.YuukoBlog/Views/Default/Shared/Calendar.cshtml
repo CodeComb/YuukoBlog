@@ -1,0 +1,11 @@
+﻿<div class="sidebar-module sidebar-catalogs">
+    <h3>CALENDAR</h3>
+    <div class="sidebar-body">
+        <ul class="sidebar-list">
+            @foreach (CalendarViewModel x in ViewBag.Calendars)
+            {
+                <li class="sidebar-item"><a href="/calendar/@x.Year/@x.Month">@x.Year 年 @x.Month 月 (@x.Count)</a></li>
+            }
+        </ul>
+    </div>
+</div>

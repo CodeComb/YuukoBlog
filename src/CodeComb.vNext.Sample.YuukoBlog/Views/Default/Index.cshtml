@@ -1,0 +1,69 @@
+﻿@model IEnumerable<dynamic>
+@{
+    bool Raw = false;
+    if (Html.IsRaw())
+    {
+        Raw = true;
+        Layout = null;
+    }
+}
+
+@if (Raw)
+{
+    @(new HtmlString("<div>"))
+    <div id="raw_info">
+        <div class="role-title">@ViewBag.Title - @ViewBag.SiteDescription</div>
+        <div class="role-body-class">@ViewBag.Position.ToLower()</div>
+        <div class="role-category">@ViewBag.Position.ToLower()</div>
+        <div class="role-head-title">
+            <h1>@ViewBag.Title@(ViewBag.Position == "home" ? "" : (" » " + ViewBag.Position.ToUpper()))@(ViewContext.RouteData.Values["tag"] == null ? "" : (" » " + ViewContext.RouteData.Values["tag"].ToString().ToUpper()))@(ViewContext.RouteData.Values["year"] == null ? "" : (" » " + ViewContext.RouteData.Values["year"].ToString()))@(ViewContext.RouteData.Values["month"] == null ? "" : (" » " + ViewContext.RouteData.Values["month"].ToString()))@(ViewContext.RouteData.Values["p"] == null ? "" : (" » PAGE" + ViewContext.RouteData.Values["p"].ToString()))</h1>
+        </div>
+    </div>
+}
+<div class="cont-wrap">
+    <div class="grid_9">
+        <div class="post-list">
+            @foreach (dynamic x in Model)
+            {
+                <div class="post">
+                    <div class="post-title"><h2><a href="/post/@x.Url">@x.Title</a></h2></div>
+                    <div class="post-body">
+                        @Html.Marked(x.Summary as string)
+                    </div>
+                    <div class="post-tags">
+                        @if (x.CatalogId != null)
+                        {
+                            <div class="post-catalog-item post-catalog-item-@x.Catalog.Url.ToLower()"><a href="/catalog/@x.Catalog.Url.ToLower() %>/">@x.Catalog.Url</a></div>
+                        }
+                        @foreach (PostTag t in x.Tags)
+                        {
+                            <div class="post-tag-item"><a href="/tag/@t.Tag/">@t.Tag</a></div>
+                        }
+                        <div class="clear"></div>
+                    </div>
+                    <div class="post-time">Published on @x.Time</div>
+                </div>
+            }
+        </div>
+        @Html.MakePager("post-nav-page", "post-nav-page-current", "post-nav")
+        @*<div class="post-nav">
+            <% for (var i = 1; i <= pageCount; i++) { %>
+            <% if (typeof(req.params.catalog) == 'undefined' && typeof(req.params.year) == 'undefined' && typeof(req.params.tag) == 'undefined') { %>
+            <a class="post-nav-page <%= req.params.page == null && i == 1 || req.params.page == i ? 'post-nav-page-current' : '' %>" href="/page/<%= i %>"><%= i %></a>
+            <% } else if (typeof(req.params.catalog) != 'undefined') { %>
+            <a class="post-nav-page <%= req.params.page == null && i == 1 || req.params.page == i ? 'post-nav-page-current' : '' %>" href="/catalog/<%= req.params.catalog %>/<%= i %>"><%= i %></a>
+            <% } else if (typeof(req.params.tag) != 'undefined') { %>
+            <a class="post-nav-page <%= req.params.page == null && i == 1 || req.params.page == i ? 'post-nav-page-current' : '' %>" href="/tag/<%= req.params.tag %>/<%= i %>"><%= i %></a>
+            <% } else { %>
+            <a class="post-nav-page <%= req.params.page == null && i == 1 || req.params.page == i ? 'post-nav-page-current' : '' %>" href="/calendar/<%= req.params.year %>/<%= req.params.month %>/<%= i %>"><%= i %></a>
+            <% } %>
+            <% } %>
+        </div>*@
+        <div class="clear"></div>
+    </div>
+    @Html.TemplatedPartial("/Shared/Sidebar")
+</div>
+@if (Raw)
+{
+    @(new HtmlString("</div>"))
+}

@@ -1,0 +1,33 @@
+﻿@{ 
+    ViewBag.Title = "管理后台";
+}
+@if (Html.IsRaw())
+{
+    @(new HtmlString("<div>"))
+    <div id="raw_info">
+        <div class="role-title">管理后台</div>
+        <div class="role-body-class">home</div>
+        <div class="role-category">home</div>
+        <div class="role-head-title">
+            <h1>管理后台</h1>
+        </div>
+    </div>
+}
+    <div class="cont-wrap">
+        <div class="grid_9">
+            <div class="post">
+                <div class="post-body">
+                    <form asp-action="Login" asp-controller="Admin" method="post">
+                        <p><input type="text" name="Username" placeholder="Username" /></p>
+                        <p><input type="password" name="Password" placeholder="Password" /></p>
+                        <input type="submit" value="Log in" />
+                    </form>
+                </div>
+            </div>
+        </div>
+        @Html.TemplatedPartial("/Shared/Sidebar");
+    </div>
+@if (Html.IsRaw())
+{
+    @(new HtmlString("</div>"))
+}
