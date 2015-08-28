@@ -69,14 +69,14 @@
                     </ul>
                 </div>
                 @*<div class="module widget_links">
-                    <div class="title">友情链接</div>
-                    <ul class='xoxo blogroll'>
-                        @foreach (Link item in ViewBag.Links)
-                        {
-                            <li class='cat-item'><a href="@item.URL" target="_blank">@item.Title</a></li>
-                        }
-                    </ul>
-                </div>*@
+                        <div class="title">友情链接</div>
+                        <ul class='xoxo blogroll'>
+                            @foreach (Link item in ViewBag.Links)
+                            {
+                                <li class='cat-item'><a href="@item.URL" target="_blank">@item.Title</a></li>
+                            }
+                        </ul>
+                    </div>*@
                 <div class="module widget_meta">
                     <div class="title">功能</div>
                     <ul>
@@ -102,6 +102,13 @@
     <div class="footer m">
         <div class="content">
             Copyright(C) 2014-2015 <a href="http://www.1234.sh" class="profile">www.1234.sh</a>
+            Template: 
+            <select id="lstTemplate">
+                @foreach (CodeComb.vNext.Models.Template t in ViewBag.Templates)
+                {
+                    <!option @(Html.GetTemplateFolder() == t.Folder ? "selected" : "") value="@t.Folder">@t.Title</!option>
+                }
+            </select>
         </div>
         <div class="engine">Powered by YuukoBlog</div>
         <div class="back"><a href="#" rel="nofollow" title="Top">返回顶部</a></div>

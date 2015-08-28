@@ -90,6 +90,9 @@ function MusicPlayerEnabled()
 }
 
 $(document).ready(function () {
+    $('#lstTemplate').change(function () {
+        window.location = "/home/template?folder=" + $(this).val();
+    });
     Highlight();
     $('#btnSearch').click(function () {
         if ($('#txtSearch').val())

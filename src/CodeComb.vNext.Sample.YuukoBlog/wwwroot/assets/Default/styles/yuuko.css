@@ -2005,3 +2005,9 @@ td input[type="text"], td input[type="password"] {
         margin-top: 0;
     }
 }
+
+#lstTemplate{
+    border: none;
+    background: none;
+    color: rgba(255,255,255,.7);
+}

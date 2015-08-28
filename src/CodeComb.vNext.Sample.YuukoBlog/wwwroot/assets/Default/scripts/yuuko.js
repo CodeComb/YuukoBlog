@@ -664,6 +664,9 @@
 // Main
 (function (window) {
     $(document).ready(initialize);
+    $('#lstTemplate').change(function () {
+        window.location = "/home/template?folder=" + $(this).val();
+    });
     Highlight();
     window.mobileCheck = function () {
         var check = false;

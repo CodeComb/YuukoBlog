@@ -26,6 +26,8 @@ namespace CodeComb.vNext.Sample.YuukoBlog.Controllers
             ViewBag.AvatarUrl = Startup.Configuration["AvatarUrl"];
             ViewBag.Disqus = Startup.Configuration["Disqus"];
             ViewBag.Account = Startup.Configuration["Account"];
+            ViewBag.DefaultTemplate = Startup.Configuration["DefaultTemplate"];
+            ViewBag.Templates = Templates;
 
             // Building Tags
             ViewBag.Tags = DB.PostTags

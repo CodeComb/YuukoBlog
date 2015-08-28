@@ -58,8 +58,16 @@
             <div class="cont-wrap">
                 <div class="grid_12">
                     <div class="copyright">
-                        <p>Copyright © 2015 <a href="http://www.1234.sh" target="_self">Amamiya Yuuko</a>, all rights reserved. 黑ICP备15005987号.</p>
-                        <p>Powered by <a href="https://github.com/kagamine/YuukoBlog" target="_blank" yuuko-static>YuukoBlog</a>, a lightweight and super fast ASP.Net vNext blog system. 
+                        <p>
+                            Copyright © 2015 <a href="http://www.1234.sh" target="_self">Amamiya Yuuko</a>, all rights reserved. 黑ICP备15005987号.
+                        </p>
+                        <p>Powered by <a href="https://github.com/kagamine/YuukoBlog" target="_blank" yuuko-static>YuukoBlog</a>, Template: 
+                            <select id="lstTemplate">
+                                @foreach (CodeComb.vNext.Models.Template t in ViewBag.Templates)
+                                {
+                                    <!option @(Html.GetTemplateFolder() == t.Folder ? "selected" : "")>@t.Title</!option>
+                                }
+                            </select>
                         @if (!Html.IsAdmin())
                         {
                             <a href="/admin/login" target="_self">Manage</a>

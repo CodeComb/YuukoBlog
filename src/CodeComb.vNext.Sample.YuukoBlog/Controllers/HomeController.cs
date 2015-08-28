@@ -13,6 +13,7 @@ namespace CodeComb.vNext.Sample.YuukoBlog.Controllers
     public class HomeController : BaseController
     {
         // GET: /<controller>/
+        [Route("{p:int?}")]
         public IActionResult Index(int p = 1)
         {
             return PagedTemplatedView<PostViewModel, Post>(DB.Posts
@@ -21,6 +22,12 @@ namespace CodeComb.vNext.Sample.YuukoBlog.Controllers
                 .Where(x => !x.IsPage)
                 .OrderByDescending(x => x.Time)
                 .ToList(), 5, "~/Views/{template}/Index");
+        }
+
+        public IActionResult Template(string Folder)
+        {
+            Cookies["_template"] = Folder;
+            return Redirect(Request.Headers.Get("Referer") ?? "/");
         }
     }
 }

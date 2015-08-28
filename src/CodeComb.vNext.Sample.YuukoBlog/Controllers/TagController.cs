@@ -14,7 +14,7 @@ namespace CodeComb.vNext.Sample.YuukoBlog.Controllers
     {
         // GET: /<controller>/
         [Route("Tag/{tag}/{p:int?}")]
-        public IActionResult Index(string tag, int? p)
+        public IActionResult Index(string tag, int p = 1)
         {
             return PagedTemplatedView<PostViewModel, Post>(DB.Posts
                  .Include(x => x.Tags)

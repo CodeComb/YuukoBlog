@@ -23,6 +23,15 @@
                         <input type="text" name="site" value="@ViewBag.Site" />
                     </p>
                     <p>
+                        默认模板: <br />
+                        <select name="DefaultTemplate">
+                            @foreach (CodeComb.vNext.Models.Template t in ViewBag.Templates)
+                            { 
+                                <!option @(t.Folder == ViewBag.DefaultTemplate?"selected":"")>@t.Folder</!option>
+                            }
+                        </select>
+                    </p>
+                    <p>
                         网站介绍: <br />
                         <input type="text" name="description" value="@ViewBag.Description" />
                     </p>

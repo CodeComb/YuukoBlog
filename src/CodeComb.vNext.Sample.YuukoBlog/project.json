@@ -5,15 +5,14 @@
   "dependencies": {
     "Microsoft.AspNet.Server.IIS": "1.0.0-beta6",
     "Microsoft.AspNet.Server.WebListener": "1.0.0-beta6",
-    "CodeComb.vNext": "1.0.28",
-    "CodeComb.AntiXSS": "1.0.4",
-    "CodeComb.Localization": "1.0.1",
+    "CodeComb.vNext": "1.0.29",
     "Microsoft.AspNet.Mvc": "6.0.0-beta6",
     "EntityFramework.Sqlite": "7.0.0-beta6",
     "CodeComb.Marked": "1.0.1",
     "Microsoft.AspNet.Session": "1.0.0-beta6",
     "Microsoft.AspNet.Mvc.TagHelpers": "6.0.0-beta6",
-    "Microsoft.Framework.Configuration.Json": "1.0.0-beta6"
+    "Microsoft.Framework.Configuration.Json": "1.0.0-beta6",
+    "EntityFramework.SqlServer": "7.0.0-beta6"
   },
 
   "commands": {

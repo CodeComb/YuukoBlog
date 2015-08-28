@@ -40,6 +40,7 @@ namespace CodeComb.vNext.Sample.YuukoBlog.Controllers
             Startup.Configuration["Disqus"] = config.Disqus;
             Startup.Configuration["AvatarUrl"] = config.AvatarUrl;
             Startup.Configuration["AboutUrl"] = config.AboutUrl;
+            Template.DefaultTemplate = config.DefaultTemplate;
             return RedirectToAction("Index", "Admin");
         }
 

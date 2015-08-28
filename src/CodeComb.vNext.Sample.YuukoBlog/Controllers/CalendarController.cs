@@ -13,8 +13,8 @@ namespace CodeComb.vNext.Sample.YuukoBlog.Controllers
     public class CalendarController : BaseController
     {
         // GET: /<controller>/
-        [Route("{year:int}/{month:int}/{page:int?}")]
-        public IActionResult Index(int year, int month, int? p)
+        [Route("{year:int}/{month:int}/{p:int?}")]
+        public IActionResult Index(int year, int month, int p = 1)
         {
             var begin = new DateTime(year, month,1);
             var end = begin.AddMonths(1);

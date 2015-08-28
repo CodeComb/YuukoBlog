@@ -4,7 +4,7 @@
         <ul class="sidebar-list">
             @foreach (CatalogViewModel x in ViewBag.Catalogs)
             {
-                <li class="sidebar-item"><a href="/catalog/@x.Url.ToLower()">@x.Title (@x.Count)</a></li>
+                <li class="sidebar-item"><a href="/catalog/@x.Url.ToLower()">@x.Url.ToUpper() (@x.Count)</a></li>
             }
         </ul>
     </div>

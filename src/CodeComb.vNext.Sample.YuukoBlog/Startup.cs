@@ -34,12 +34,19 @@ namespace CodeComb.vNext.Sample.YuukoBlog
             services.AddMvc();
 
             var appEnv = services.BuildServiceProvider().GetRequiredService<IApplicationEnvironment>();
-            
+
+            // 由于Issue #2936 目前SQLite不能存储中文，因此暂不采用SQLite了
+            //services
+            //    .AddEntityFramework()
+            //    .AddSqlite()
+            //    .AddDbContext<BlogContext>(options =>
+            //        options.UseSqlite("Data source=" + appEnv.ApplicationBasePath + "/" + Configuration["DBFile"] + ";"));
+
             services
                 .AddEntityFramework()
-                .AddSqlite()
+                .AddSqlServer()
                 .AddDbContext<BlogContext>(options =>
-                    options.UseSqlite("Data source=" + appEnv.ApplicationBasePath + "/" + Configuration["DBFile"] + ";"));
+                    options.UseSqlServer(Configuration["ConnectionString"]));
 
             services.AddCaching();
             services.AddSession();
@@ -53,8 +60,6 @@ namespace CodeComb.vNext.Sample.YuukoBlog
 
         public async void Configure(IApplicationBuilder app)
         {
-            await SampleData.InitializeYuukoBlog(app.ApplicationServices);
-
             app.UseSession();
             
             app.UseMvc(router =>
@@ -68,6 +73,8 @@ namespace CodeComb.vNext.Sample.YuukoBlog
                     template: "{id}",
                     defaults: new { controller = "Page", action = "Index" });
             });
+
+            await SampleData.InitializeYuukoBlog(app.ApplicationServices);
         }
     }
 }

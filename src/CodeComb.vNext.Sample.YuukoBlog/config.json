@@ -6,6 +6,7 @@
   "Site": "あまみや ゆうこ",
   "Description": "Amamiya Yuuko's ebullient future",
   "Disqus": "yuuko",
-  "DefaultTemplate": "Moon",
-  "DBFile" :  "Database/Yuuko.db"
+  "DefaultTemplate": "Default",
+  "DBFile": "Database/Yuuko.db",
+  "ConnectionString": "Server=(localdb)\\mssqllocaldb;Database=YuukoBlog-3e011444-cb12-46c7-9504-69cfedeac5fa;Trusted_Connection=True;MultipleActiveResultSets=true"
 }
