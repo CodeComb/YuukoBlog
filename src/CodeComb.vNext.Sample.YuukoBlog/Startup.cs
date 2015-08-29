@@ -69,11 +69,6 @@ namespace CodeComb.vNext.Sample.YuukoBlog
                 router.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
-
-                router.MapRoute(
-                    name: "page",
-                    template: "{id}",
-                    defaults: new { controller = "Page", action = "Index" });
             });
 
             await SampleData.InitializeYuukoBlog(app.ApplicationServices);
