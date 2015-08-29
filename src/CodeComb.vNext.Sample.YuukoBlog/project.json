@@ -12,7 +12,8 @@
     "Microsoft.AspNet.Session": "1.0.0-beta6",
     "Microsoft.AspNet.Mvc.TagHelpers": "6.0.0-beta6",
     "Microsoft.Framework.Configuration.Json": "1.0.0-beta6",
-    "EntityFramework.SqlServer": "7.0.0-beta6"
+    "EntityFramework.SqlServer": "7.0.0-beta6",
+    "Microsoft.AspNet.StaticFiles": "1.0.0-beta6"
   },
 
   "commands": {

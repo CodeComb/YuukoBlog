@@ -61,6 +61,7 @@ namespace CodeComb.vNext.Sample.YuukoBlog
 
         public async void Configure(IApplicationBuilder app)
         {
+            app.UseStaticFiles();
             app.UseSession();
             
             app.UseMvc(router =>
