@@ -15,13 +15,13 @@
                     @if (x.CatalogId != null)
                     { 
                         @("分类:")
-                        <a asp-action="Index" asp-controller="Catalog" asp-route-id="@x.Catalog.Url">@x.Catalog.Title</a>
+                        <a asp-action="Catalog" asp-controller="Home" asp-route-id="@x.Catalog.Url">@x.Catalog.Title</a>
                     }
                     
                     标签:
                     @foreach (PostTag y in x.Tags)
                     {
-                        <a asp-action="Index" asp-controller="Tag" asp-route-tag="@y.Tag">@y.Tag</a>
+                        <a asp-action="Tag" asp-controller="Home" asp-route-tag="@y.Tag">@y.Tag</a>
                     }
                 </span>
             </div>

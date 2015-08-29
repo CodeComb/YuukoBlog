@@ -12,7 +12,7 @@ namespace CodeComb.vNext.Sample.YuukoBlog.Controllers
     public class PostController : BaseController
     {
         [Route("Post/{id}")]
-        public IActionResult Index(string id)
+        public IActionResult Post(string id)
         {
             var post = DB.Posts
                 .Include(x => x.Catalog)
@@ -20,10 +20,23 @@ namespace CodeComb.vNext.Sample.YuukoBlog.Controllers
                 .Where(x => x.Url == id && !x.IsPage)
                 .SingleOrDefault();
             if (post == null)
-                return TemplatedError(404);
+                return Error(404);
             ViewBag.Title = post.Title;
             ViewBag.Position = post.CatalogId != null ? post.Catalog.Url : "home";
-            return TemplatedView("~/Views/{template}/Post", post);
+            return View(post);
+        }
+
+        [Route("{id}")]
+        public IActionResult Page(string id)
+        {
+            var post = DB.Posts
+                .Where(x => x.Url == id && x.IsPage)
+                .SingleOrDefault();
+            if (post == null)
+                return Error(404);
+            ViewBag.Title = post.Title;
+            ViewBag.Position = post.CatalogId.HasValue ? post.Catalog.Url : "home";
+            return View("Post", post);
         }
     }
 }

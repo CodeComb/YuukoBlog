@@ -54,7 +54,7 @@ namespace CodeComb.vNext.Sample.YuukoBlog.Controllers
                 .Where(x => x.Id == id)
                 .SingleOrDefault();
             if (file == null)
-                return TemplatedError(404);
+                return Error(404);
             return File(file.File, file.ContentType, file.FileName);
         }
     }

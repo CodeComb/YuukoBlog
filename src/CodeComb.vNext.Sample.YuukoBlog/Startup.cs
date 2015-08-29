@@ -42,6 +42,7 @@ namespace CodeComb.vNext.Sample.YuukoBlog
             //    .AddDbContext<BlogContext>(options =>
             //        options.UseSqlite("Data source=" + appEnv.ApplicationBasePath + "/" + Configuration["DBFile"] + ";"));
 
+            // 使用SqlServer
             services
                 .AddEntityFramework()
                 .AddSqlServer()

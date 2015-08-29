@@ -38,6 +38,26 @@
           "lib/dnx451/CodeComb.Marked.dll": {}
         }
       },
+      "CodeComb.vNext/1.0.31": {
+        "dependencies": {
+          "CodeComb.Localization": "1.0.1",
+          "Microsoft.AspNet.Identity.EntityFramework": "3.0.0-beta6",
+          "Microsoft.AspNet.Mvc": "6.0.0-beta6",
+          "Microsoft.AspNet.Tooling.Razor": "1.0.0-beta6"
+        },
+        "frameworkAssemblies": [
+          "Microsoft.CSharp",
+          "mscorlib",
+          "System",
+          "System.Core"
+        ],
+        "compile": {
+          "lib/dnx451/CodeComb.vNext.dll": {}
+        },
+        "runtime": {
+          "lib/dnx451/CodeComb.vNext.dll": {}
+        }
+      },
       "EntityFramework.Core/7.0.0-beta6": {
         "dependencies": {
           "Ix-Async": "1.2.4",
@@ -1651,6 +1671,20 @@
         },
         "runtime": {
           "lib/dnxcore50/CodeComb.Marked.dll": {}
+        }
+      },
+      "CodeComb.vNext/1.0.31": {
+        "dependencies": {
+          "CodeComb.Localization": "1.0.1",
+          "Microsoft.AspNet.Identity.EntityFramework": "3.0.0-beta6",
+          "Microsoft.AspNet.Mvc": "6.0.0-beta6",
+          "Microsoft.AspNet.Tooling.Razor": "1.0.0-beta6"
+        },
+        "compile": {
+          "lib/dnxcore50/CodeComb.vNext.dll": {}
+        },
+        "runtime": {
+          "lib/dnxcore50/CodeComb.vNext.dll": {}
         }
       },
       "EntityFramework.Core/7.0.0-beta6": {
@@ -4258,6 +4292,18 @@
         "lib/dnx451/CodeComb.Marked.xml",
         "lib/dnxcore50/CodeComb.Marked.dll",
         "lib/dnxcore50/CodeComb.Marked.xml"
+      ]
+    },
+    "CodeComb.vNext/1.0.31": {
+      "sha512": "8i9kblkLwu944vokzm758xeGSrfXzid76BEgE2NU6HzJ8dS2aZfLSS5U4IZwzFT1S1cS2wVj777ym2/TYMGMzg==",
+      "files": [
+        "CodeComb.vNext.1.0.31.nupkg",
+        "CodeComb.vNext.1.0.31.nupkg.sha512",
+        "CodeComb.vNext.nuspec",
+        "lib/dnx451/CodeComb.vNext.dll",
+        "lib/dnx451/CodeComb.vNext.xml",
+        "lib/dnxcore50/CodeComb.vNext.dll",
+        "lib/dnxcore50/CodeComb.vNext.xml"
       ]
     },
     "EntityFramework.Core/7.0.0-beta6": {
@@ -7659,7 +7705,7 @@
     "": [
       "Microsoft.AspNet.Server.IIS >= 1.0.0-beta6",
       "Microsoft.AspNet.Server.WebListener >= 1.0.0-beta6",
-      "CodeComb.vNext >= 1.0.29",
+      "CodeComb.vNext >= 1.0.31",
       "Microsoft.AspNet.Mvc >= 6.0.0-beta6",
       "EntityFramework.Sqlite >= 7.0.0-beta6",
       "CodeComb.Marked >= 1.0.1",

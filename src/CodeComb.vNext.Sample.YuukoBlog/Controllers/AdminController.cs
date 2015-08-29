@@ -20,7 +20,7 @@ namespace CodeComb.vNext.Sample.YuukoBlog.Controllers
         [Route("Admin/Index")]
         public IActionResult Index() 
         {
-            return TemplatedView();
+            return View();
         }
 
         [AdminRequired]
@@ -47,7 +47,7 @@ namespace CodeComb.vNext.Sample.YuukoBlog.Controllers
         [GuestRequired]
         public IActionResult Login()
         {
-            return TemplatedView();
+            return View();
         }
 
         [GuestRequired]
@@ -63,7 +63,7 @@ namespace CodeComb.vNext.Sample.YuukoBlog.Controllers
             }
             else
             {
-                return TemplatedView();
+                return View();
             }
         }
 
@@ -77,7 +77,7 @@ namespace CodeComb.vNext.Sample.YuukoBlog.Controllers
                 .Include(x => x.Tags)
                 .Where(x => x.Url == id)
                 .SingleOrDefault();
-            if (post == null) return TemplatedError(404);
+            if (post == null) return Error(404);
             var summary = "";
             var tmp = content.Split('\n');
             if (tmp.Count() > 16)
@@ -121,7 +121,7 @@ namespace CodeComb.vNext.Sample.YuukoBlog.Controllers
                 .Where(x => x.Url == id).SingleOrDefault();
             
             if (post == null)
-                return TemplatedError(404);
+                return Error(404);
             foreach (var t in post.Tags)
                 DB.PostTags.Remove(t);
             DB.Posts.Remove(post);
@@ -163,7 +163,7 @@ namespace CodeComb.vNext.Sample.YuukoBlog.Controllers
         [AdminRequired]
         public IActionResult Catalog()
         {
-            return TemplatedView(DB.Catalogs.OrderByDescending(x => x.PRI).ToList());
+            return View(DB.Catalogs.OrderByDescending(x => x.PRI).ToList());
         }
 
         [AdminRequired]
@@ -174,7 +174,7 @@ namespace CodeComb.vNext.Sample.YuukoBlog.Controllers
         {
             var catalog = DB.Catalogs.Where(x => x.Url == id).SingleOrDefault();
             if (catalog == null)
-                return TemplatedError(404);
+                return Error(404);
             DB.Catalogs.Remove(catalog);
             DB.SaveChanges();
             return Content("true");
@@ -188,7 +188,7 @@ namespace CodeComb.vNext.Sample.YuukoBlog.Controllers
         {
             var catalog = DB.Catalogs.Where(x => x.Url == id).SingleOrDefault();
             if (catalog == null)
-                return TemplatedError(404);
+                return Error(404);
             catalog.Url = newId;
             catalog.Title = title;
             catalog.PRI = pri;
