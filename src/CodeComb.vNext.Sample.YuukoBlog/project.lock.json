@@ -3,24 +3,6 @@
   "version": 1,
   "targets": {
     "DNX,Version=v4.5.1": {
-      "CodeComb.Localization/1.0.1": {
-        "dependencies": {
-          "Microsoft.AspNet.Identity.EntityFramework": "3.0.0-beta6",
-          "Microsoft.AspNet.Mvc": "6.0.0-beta6"
-        },
-        "frameworkAssemblies": [
-          "Microsoft.CSharp",
-          "mscorlib",
-          "System",
-          "System.Core"
-        ],
-        "compile": {
-          "lib/dnx451/CodeComb.Localization.dll": {}
-        },
-        "runtime": {
-          "lib/dnx451/CodeComb.Localization.dll": {}
-        }
-      },
       "CodeComb.Marked/1.0.1": {
         "dependencies": {
           "Microsoft.AspNet.Mvc": "6.0.0-beta6"
@@ -36,26 +18,6 @@
         },
         "runtime": {
           "lib/dnx451/CodeComb.Marked.dll": {}
-        }
-      },
-      "CodeComb.vNext/1.0.31": {
-        "dependencies": {
-          "CodeComb.Localization": "1.0.1",
-          "Microsoft.AspNet.Identity.EntityFramework": "3.0.0-beta6",
-          "Microsoft.AspNet.Mvc": "6.0.0-beta6",
-          "Microsoft.AspNet.Tooling.Razor": "1.0.0-beta6"
-        },
-        "frameworkAssemblies": [
-          "Microsoft.CSharp",
-          "mscorlib",
-          "System",
-          "System.Core"
-        ],
-        "compile": {
-          "lib/dnx451/CodeComb.vNext.dll": {}
-        },
-        "runtime": {
-          "lib/dnx451/CodeComb.vNext.dll": {}
         }
       },
       "EntityFramework.Core/7.0.0-beta6": {
@@ -187,47 +149,6 @@
           "lib/dnx451/Microsoft.AspNet.Antiforgery.dll": {}
         }
       },
-      "Microsoft.AspNet.Authentication/1.0.0-beta6": {
-        "dependencies": {
-          "Microsoft.AspNet.DataProtection": "1.0.0-beta6",
-          "Microsoft.AspNet.Http": "1.0.0-beta6",
-          "Microsoft.AspNet.Http.Extensions": "1.0.0-beta6",
-          "Microsoft.Framework.Logging.Abstractions": "1.0.0-beta6",
-          "Microsoft.Framework.OptionsModel": "1.0.0-beta6",
-          "Microsoft.Framework.WebEncoders": "1.0.0-beta6"
-        },
-        "frameworkAssemblies": [
-          "Microsoft.CSharp",
-          "mscorlib",
-          "System",
-          "System.Core"
-        ],
-        "compile": {
-          "lib/dnx451/Microsoft.AspNet.Authentication.dll": {}
-        },
-        "runtime": {
-          "lib/dnx451/Microsoft.AspNet.Authentication.dll": {}
-        }
-      },
-      "Microsoft.AspNet.Authentication.Cookies/1.0.0-beta6": {
-        "dependencies": {
-          "Microsoft.AspNet.Authentication": "1.0.0-beta6",
-          "Microsoft.Framework.WebEncoders": "1.0.0-beta6",
-          "Newtonsoft.Json": "6.0.6"
-        },
-        "frameworkAssemblies": [
-          "Microsoft.CSharp",
-          "mscorlib",
-          "System",
-          "System.Core"
-        ],
-        "compile": {
-          "lib/dnx451/Microsoft.AspNet.Authentication.Cookies.dll": {}
-        },
-        "runtime": {
-          "lib/dnx451/Microsoft.AspNet.Authentication.Cookies.dll": {}
-        }
-      },
       "Microsoft.AspNet.Authorization/1.0.0-beta6": {
         "dependencies": {
           "Microsoft.AspNet.Http.Features": "1.0.0-beta6",
@@ -279,23 +200,6 @@
         },
         "runtime": {
           "lib/dnx451/Microsoft.AspNet.Cryptography.Internal.dll": {}
-        }
-      },
-      "Microsoft.AspNet.Cryptography.KeyDerivation/1.0.0-beta6": {
-        "dependencies": {
-          "Microsoft.AspNet.Cryptography.Internal": "1.0.0-beta6"
-        },
-        "frameworkAssemblies": [
-          "Microsoft.CSharp",
-          "mscorlib",
-          "System",
-          "System.Core"
-        ],
-        "compile": {
-          "lib/dnx451/Microsoft.AspNet.Cryptography.KeyDerivation.dll": {}
-        },
-        "runtime": {
-          "lib/dnx451/Microsoft.AspNet.Cryptography.KeyDerivation.dll": {}
         }
       },
       "Microsoft.AspNet.DataProtection/1.0.0-beta6": {
@@ -553,45 +457,6 @@
         },
         "runtime": {
           "lib/dnx451/Microsoft.AspNet.Http.Features.dll": {}
-        }
-      },
-      "Microsoft.AspNet.Identity/3.0.0-beta6": {
-        "dependencies": {
-          "Microsoft.AspNet.Authentication.Cookies": "1.0.0-beta6",
-          "Microsoft.AspNet.Cryptography.KeyDerivation": "1.0.0-beta6",
-          "Microsoft.AspNet.DataProtection": "1.0.0-beta6",
-          "Microsoft.AspNet.Hosting.Abstractions": "1.0.0-beta6"
-        },
-        "frameworkAssemblies": [
-          "Microsoft.CSharp",
-          "mscorlib",
-          "System",
-          "System.Core"
-        ],
-        "compile": {
-          "lib/dnx451/Microsoft.AspNet.Identity.dll": {}
-        },
-        "runtime": {
-          "lib/dnx451/Microsoft.AspNet.Identity.dll": {}
-        }
-      },
-      "Microsoft.AspNet.Identity.EntityFramework/3.0.0-beta6": {
-        "dependencies": {
-          "EntityFramework.SqlServer": "7.0.0-beta6",
-          "Microsoft.AspNet.Identity": "3.0.0-beta6"
-        },
-        "frameworkAssemblies": [
-          "Microsoft.CSharp",
-          "mscorlib",
-          "System",
-          "System.Core",
-          "System.Threading.Tasks"
-        ],
-        "compile": {
-          "lib/dnx451/Microsoft.AspNet.Identity.EntityFramework.dll": {}
-        },
-        "runtime": {
-          "lib/dnx451/Microsoft.AspNet.Identity.EntityFramework.dll": {}
         }
       },
       "Microsoft.AspNet.JsonPatch/1.0.0-beta6": {
@@ -1011,24 +876,6 @@
         },
         "runtime": {
           "lib/dnx451/Microsoft.AspNet.Session.dll": {}
-        }
-      },
-      "Microsoft.AspNet.Tooling.Razor/1.0.0-beta6": {
-        "dependencies": {
-          "Microsoft.AspNet.Razor.Runtime": "4.0.0-beta6",
-          "Newtonsoft.Json": "6.0.6"
-        },
-        "frameworkAssemblies": [
-          "Microsoft.CSharp",
-          "mscorlib",
-          "System",
-          "System.Core"
-        ],
-        "compile": {
-          "lib/dnx451/Microsoft.AspNet.Tooling.Razor.dll": {}
-        },
-        "runtime": {
-          "lib/dnx451/Microsoft.AspNet.Tooling.Razor.dll": {}
         }
       },
       "Microsoft.AspNet.WebUtilities/1.0.0-beta6": {
@@ -1650,18 +1497,6 @@
       }
     },
     "DNXCore,Version=v5.0": {
-      "CodeComb.Localization/1.0.1": {
-        "dependencies": {
-          "Microsoft.AspNet.Identity.EntityFramework": "3.0.0-beta6",
-          "Microsoft.AspNet.Mvc": "6.0.0-beta6"
-        },
-        "compile": {
-          "lib/dnxcore50/CodeComb.Localization.dll": {}
-        },
-        "runtime": {
-          "lib/dnxcore50/CodeComb.Localization.dll": {}
-        }
-      },
       "CodeComb.Marked/1.0.1": {
         "dependencies": {
           "Microsoft.AspNet.Mvc": "6.0.0-beta6"
@@ -1671,20 +1506,6 @@
         },
         "runtime": {
           "lib/dnxcore50/CodeComb.Marked.dll": {}
-        }
-      },
-      "CodeComb.vNext/1.0.31": {
-        "dependencies": {
-          "CodeComb.Localization": "1.0.1",
-          "Microsoft.AspNet.Identity.EntityFramework": "3.0.0-beta6",
-          "Microsoft.AspNet.Mvc": "6.0.0-beta6",
-          "Microsoft.AspNet.Tooling.Razor": "1.0.0-beta6"
-        },
-        "compile": {
-          "lib/dnxcore50/CodeComb.vNext.dll": {}
-        },
-        "runtime": {
-          "lib/dnxcore50/CodeComb.vNext.dll": {}
         }
       },
       "EntityFramework.Core/7.0.0-beta6": {
@@ -1796,36 +1617,6 @@
           "lib/dnxcore50/Microsoft.AspNet.Antiforgery.dll": {}
         }
       },
-      "Microsoft.AspNet.Authentication/1.0.0-beta6": {
-        "dependencies": {
-          "Microsoft.AspNet.DataProtection": "1.0.0-beta6",
-          "Microsoft.AspNet.Http": "1.0.0-beta6",
-          "Microsoft.AspNet.Http.Extensions": "1.0.0-beta6",
-          "Microsoft.Framework.Logging.Abstractions": "1.0.0-beta6",
-          "Microsoft.Framework.OptionsModel": "1.0.0-beta6",
-          "Microsoft.Framework.WebEncoders": "1.0.0-beta6",
-          "System.Security.Cryptography.RandomNumberGenerator": "4.0.0-beta-23109"
-        },
-        "compile": {
-          "lib/dnxcore50/Microsoft.AspNet.Authentication.dll": {}
-        },
-        "runtime": {
-          "lib/dnxcore50/Microsoft.AspNet.Authentication.dll": {}
-        }
-      },
-      "Microsoft.AspNet.Authentication.Cookies/1.0.0-beta6": {
-        "dependencies": {
-          "Microsoft.AspNet.Authentication": "1.0.0-beta6",
-          "Microsoft.Framework.WebEncoders": "1.0.0-beta6",
-          "Newtonsoft.Json": "6.0.6"
-        },
-        "compile": {
-          "lib/dnxcore50/Microsoft.AspNet.Authentication.Cookies.dll": {}
-        },
-        "runtime": {
-          "lib/dnxcore50/Microsoft.AspNet.Authentication.Cookies.dll": {}
-        }
-      },
       "Microsoft.AspNet.Authorization/1.0.0-beta6": {
         "dependencies": {
           "Microsoft.AspNet.Http.Features": "1.0.0-beta6",
@@ -1870,21 +1661,6 @@
         },
         "runtime": {
           "lib/dnxcore50/Microsoft.AspNet.Cryptography.Internal.dll": {}
-        }
-      },
-      "Microsoft.AspNet.Cryptography.KeyDerivation/1.0.0-beta6": {
-        "dependencies": {
-          "Microsoft.AspNet.Cryptography.Internal": "1.0.0-beta6",
-          "System.Runtime.Extensions": "4.0.10-beta-23109",
-          "System.Security.Cryptography.Hashing": "4.0.0-beta-23109",
-          "System.Security.Cryptography.Hashing.Algorithms": "4.0.0-beta-23109",
-          "System.Text.Encoding.Extensions": "4.0.10-beta-23109"
-        },
-        "compile": {
-          "lib/dnxcore50/Microsoft.AspNet.Cryptography.KeyDerivation.dll": {}
-        },
-        "runtime": {
-          "lib/dnxcore50/Microsoft.AspNet.Cryptography.KeyDerivation.dll": {}
         }
       },
       "Microsoft.AspNet.DataProtection/1.0.0-beta6": {
@@ -2126,67 +1902,6 @@
         },
         "runtime": {
           "lib/dnxcore50/Microsoft.AspNet.Http.Features.dll": {}
-        }
-      },
-      "Microsoft.AspNet.Identity/3.0.0-beta6": {
-        "dependencies": {
-          "Microsoft.AspNet.Authentication.Cookies": "1.0.0-beta6",
-          "Microsoft.AspNet.Cryptography.KeyDerivation": "1.0.0-beta6",
-          "Microsoft.AspNet.DataProtection": "1.0.0-beta6",
-          "Microsoft.AspNet.Hosting.Abstractions": "1.0.0-beta6",
-          "System.Collections": "4.0.10-beta-23109",
-          "System.ComponentModel": "4.0.0-beta-23109",
-          "System.Diagnostics.Debug": "4.0.10-beta-23109",
-          "System.Diagnostics.Tools": "4.0.0-beta-23109",
-          "System.Globalization": "4.0.10-beta-23109",
-          "System.Globalization.Extensions": "4.0.0-beta-23109",
-          "System.Linq.Expressions": "4.0.10-beta-23109",
-          "System.Linq.Queryable": "4.0.0-beta-23109",
-          "System.Net.Primitives": "4.0.10-beta-23109",
-          "System.Reflection": "4.0.10-beta-23109",
-          "System.Resources.ResourceManager": "4.0.0-beta-23109",
-          "System.Runtime": "4.0.20-beta-23109",
-          "System.Security.Claims": "4.0.0-beta-23109",
-          "System.Security.Cryptography.Hashing": "4.0.0-beta-23109",
-          "System.Security.Principal": "4.0.0-beta-23109",
-          "System.Text.Encoding": "4.0.10-beta-23109",
-          "System.Text.RegularExpressions": "4.0.10-beta-23109",
-          "System.Threading.Tasks": "4.0.10-beta-23109"
-        },
-        "compile": {
-          "lib/dnxcore50/Microsoft.AspNet.Identity.dll": {}
-        },
-        "runtime": {
-          "lib/dnxcore50/Microsoft.AspNet.Identity.dll": {}
-        }
-      },
-      "Microsoft.AspNet.Identity.EntityFramework/3.0.0-beta6": {
-        "dependencies": {
-          "EntityFramework.SqlServer": "7.0.0-beta6",
-          "Microsoft.AspNet.Identity": "3.0.0-beta6",
-          "System.Collections": "4.0.10-beta-23109",
-          "System.ComponentModel": "4.0.0-beta-23109",
-          "System.ComponentModel.TypeConverter": "4.0.0-beta-23109",
-          "System.Diagnostics.Debug": "4.0.10-beta-23109",
-          "System.Diagnostics.Tools": "4.0.0-beta-23109",
-          "System.Globalization": "4.0.10-beta-23109",
-          "System.Linq": "4.0.0-beta-23109",
-          "System.Linq.Expressions": "4.0.10-beta-23109",
-          "System.Linq.Queryable": "4.0.0-beta-23109",
-          "System.Reflection": "4.0.10-beta-23109",
-          "System.Resources.ResourceManager": "4.0.0-beta-23109",
-          "System.Runtime": "4.0.20-beta-23109",
-          "System.Runtime.Extensions": "4.0.10-beta-23109",
-          "System.Security.Claims": "4.0.0-beta-23109",
-          "System.Security.Principal": "4.0.0-beta-23109",
-          "System.Text.Encoding": "4.0.10-beta-23109",
-          "System.Threading.Tasks": "4.0.10-beta-23109"
-        },
-        "compile": {
-          "lib/dnxcore50/Microsoft.AspNet.Identity.EntityFramework.dll": {}
-        },
-        "runtime": {
-          "lib/dnxcore50/Microsoft.AspNet.Identity.EntityFramework.dll": {}
         }
       },
       "Microsoft.AspNet.JsonPatch/1.0.0-beta6": {
@@ -2529,19 +2244,6 @@
         },
         "runtime": {
           "lib/dnxcore50/Microsoft.AspNet.Session.dll": {}
-        }
-      },
-      "Microsoft.AspNet.Tooling.Razor/1.0.0-beta6": {
-        "dependencies": {
-          "Microsoft.AspNet.Razor.Runtime": "4.0.0-beta6",
-          "Newtonsoft.Json": "6.0.6",
-          "System.Runtime": "4.0.20-beta-23109"
-        },
-        "compile": {
-          "lib/dnxcore50/Microsoft.AspNet.Tooling.Razor.dll": {}
-        },
-        "runtime": {
-          "lib/dnxcore50/Microsoft.AspNet.Tooling.Razor.dll": {}
         }
       },
       "Microsoft.AspNet.WebUtilities/1.0.0-beta6": {
@@ -4270,18 +3972,6 @@
     }
   },
   "libraries": {
-    "CodeComb.Localization/1.0.1": {
-      "sha512": "b8URtM8ZVJUH0VFST2CpNFpZQUPuFGvEvo/xLTzm31YCVrDJcuioxjBw3MJqxBFCRTWQs3IqKS1k0ogRIjsy0Q==",
-      "files": [
-        "CodeComb.Localization.1.0.1.nupkg",
-        "CodeComb.Localization.1.0.1.nupkg.sha512",
-        "CodeComb.Localization.nuspec",
-        "lib/dnx451/CodeComb.Localization.dll",
-        "lib/dnx451/CodeComb.Localization.xml",
-        "lib/dnxcore50/CodeComb.Localization.dll",
-        "lib/dnxcore50/CodeComb.Localization.xml"
-      ]
-    },
     "CodeComb.Marked/1.0.1": {
       "sha512": "omrYUgGppXsPE+jVhwL4YtZd4kDTfK7SzUeu2p6LtsFC6tVWq6XwDcutC6CghurMQ1fgMnpm4F9PjVNsIrYF+g==",
       "files": [
@@ -4292,18 +3982,6 @@
         "lib/dnx451/CodeComb.Marked.xml",
         "lib/dnxcore50/CodeComb.Marked.dll",
         "lib/dnxcore50/CodeComb.Marked.xml"
-      ]
-    },
-    "CodeComb.vNext/1.0.31": {
-      "sha512": "8i9kblkLwu944vokzm758xeGSrfXzid76BEgE2NU6HzJ8dS2aZfLSS5U4IZwzFT1S1cS2wVj777ym2/TYMGMzg==",
-      "files": [
-        "CodeComb.vNext.1.0.31.nupkg",
-        "CodeComb.vNext.1.0.31.nupkg.sha512",
-        "CodeComb.vNext.nuspec",
-        "lib/dnx451/CodeComb.vNext.dll",
-        "lib/dnx451/CodeComb.vNext.xml",
-        "lib/dnxcore50/CodeComb.vNext.dll",
-        "lib/dnxcore50/CodeComb.vNext.xml"
       ]
     },
     "EntityFramework.Core/7.0.0-beta6": {
@@ -4392,34 +4070,6 @@
         "repo.json"
       ]
     },
-    "Microsoft.AspNet.Authentication/1.0.0-beta6": {
-      "serviceable": true,
-      "sha512": "AwKYDq45EFpTeWuIZrbzgIkPk4EYCRu1XeMiyNus1mLaphWAbRQ//1fV6friCLMSaJPE5S6zHWepMmjRQPYCMw==",
-      "files": [
-        "lib/dnx451/Microsoft.AspNet.Authentication.dll",
-        "lib/dnx451/Microsoft.AspNet.Authentication.xml",
-        "lib/dnxcore50/Microsoft.AspNet.Authentication.dll",
-        "lib/dnxcore50/Microsoft.AspNet.Authentication.xml",
-        "Microsoft.AspNet.Authentication.1.0.0-beta6.nupkg",
-        "Microsoft.AspNet.Authentication.1.0.0-beta6.nupkg.sha512",
-        "Microsoft.AspNet.Authentication.nuspec",
-        "repo.json"
-      ]
-    },
-    "Microsoft.AspNet.Authentication.Cookies/1.0.0-beta6": {
-      "serviceable": true,
-      "sha512": "iEl4EsyF/XpgwLo9rcyumUfYoOuTeQvE6hBwImXYXlsYZA0DJr16sNFY2S+cARPZXp1/WNJzTAdfG36yUPTWTA==",
-      "files": [
-        "lib/dnx451/Microsoft.AspNet.Authentication.Cookies.dll",
-        "lib/dnx451/Microsoft.AspNet.Authentication.Cookies.xml",
-        "lib/dnxcore50/Microsoft.AspNet.Authentication.Cookies.dll",
-        "lib/dnxcore50/Microsoft.AspNet.Authentication.Cookies.xml",
-        "Microsoft.AspNet.Authentication.Cookies.1.0.0-beta6.nupkg",
-        "Microsoft.AspNet.Authentication.Cookies.1.0.0-beta6.nupkg.sha512",
-        "Microsoft.AspNet.Authentication.Cookies.nuspec",
-        "repo.json"
-      ]
-    },
     "Microsoft.AspNet.Authorization/1.0.0-beta6": {
       "serviceable": true,
       "sha512": "5H1hF32Cx8fI8qIiF7IVKamRdyHqxqyyql0bjlMEyI8fGAz76j3gqRD3V37Up/EMdnZpO6zMAl8swu5f67NjZw==",
@@ -4461,22 +4111,6 @@
         "Microsoft.AspNet.Cryptography.Internal.1.0.0-beta6.nupkg",
         "Microsoft.AspNet.Cryptography.Internal.1.0.0-beta6.nupkg.sha512",
         "Microsoft.AspNet.Cryptography.Internal.nuspec",
-        "repo.json"
-      ]
-    },
-    "Microsoft.AspNet.Cryptography.KeyDerivation/1.0.0-beta6": {
-      "serviceable": true,
-      "sha512": "dRYCp+Bqxc3HlZw+l9cpIzfevTH8aZxD/X5U7NzV8lYPuImfaYKK5l8h0hHS2TRoVrPZfaBYrZBFHMCWaS23ig==",
-      "files": [
-        "lib/dnx451/Microsoft.AspNet.Cryptography.KeyDerivation.dll",
-        "lib/dnx451/Microsoft.AspNet.Cryptography.KeyDerivation.xml",
-        "lib/dnxcore50/Microsoft.AspNet.Cryptography.KeyDerivation.dll",
-        "lib/dnxcore50/Microsoft.AspNet.Cryptography.KeyDerivation.xml",
-        "lib/net451/Microsoft.AspNet.Cryptography.KeyDerivation.dll",
-        "lib/net451/Microsoft.AspNet.Cryptography.KeyDerivation.xml",
-        "Microsoft.AspNet.Cryptography.KeyDerivation.1.0.0-beta6.nupkg",
-        "Microsoft.AspNet.Cryptography.KeyDerivation.1.0.0-beta6.nupkg.sha512",
-        "Microsoft.AspNet.Cryptography.KeyDerivation.nuspec",
         "repo.json"
       ]
     },
@@ -4681,34 +4315,6 @@
         "Microsoft.AspNet.Http.Features.1.0.0-beta6.nupkg",
         "Microsoft.AspNet.Http.Features.1.0.0-beta6.nupkg.sha512",
         "Microsoft.AspNet.Http.Features.nuspec",
-        "repo.json"
-      ]
-    },
-    "Microsoft.AspNet.Identity/3.0.0-beta6": {
-      "serviceable": true,
-      "sha512": "RBWTV6m39f4XkUCrDgYbKojAU2B26fcVPpujcOq9cLUh0aWle7fKvmXUadZ+JPgcCvRKep6hQ87C8ATJHyi0MA==",
-      "files": [
-        "lib/dnx451/Microsoft.AspNet.Identity.dll",
-        "lib/dnx451/Microsoft.AspNet.Identity.xml",
-        "lib/dnxcore50/Microsoft.AspNet.Identity.dll",
-        "lib/dnxcore50/Microsoft.AspNet.Identity.xml",
-        "Microsoft.AspNet.Identity.3.0.0-beta6.nupkg",
-        "Microsoft.AspNet.Identity.3.0.0-beta6.nupkg.sha512",
-        "Microsoft.AspNet.Identity.nuspec",
-        "repo.json"
-      ]
-    },
-    "Microsoft.AspNet.Identity.EntityFramework/3.0.0-beta6": {
-      "serviceable": true,
-      "sha512": "lNilMoqz5oog3jT39c+SY5ngXYYJY+ZJcorxgM2TpMZJa2JocJRyiTpJzrnx4RppNvHO/McIBLKbazJ6Zva9jQ==",
-      "files": [
-        "lib/dnx451/Microsoft.AspNet.Identity.EntityFramework.dll",
-        "lib/dnx451/Microsoft.AspNet.Identity.EntityFramework.xml",
-        "lib/dnxcore50/Microsoft.AspNet.Identity.EntityFramework.dll",
-        "lib/dnxcore50/Microsoft.AspNet.Identity.EntityFramework.xml",
-        "Microsoft.AspNet.Identity.EntityFramework.3.0.0-beta6.nupkg",
-        "Microsoft.AspNet.Identity.EntityFramework.3.0.0-beta6.nupkg.sha512",
-        "Microsoft.AspNet.Identity.EntityFramework.nuspec",
         "repo.json"
       ]
     },
@@ -5022,19 +4628,6 @@
         "Microsoft.AspNet.Session.1.0.0-beta6.nupkg.sha512",
         "Microsoft.AspNet.Session.nuspec",
         "repo.json"
-      ]
-    },
-    "Microsoft.AspNet.Tooling.Razor/1.0.0-beta6": {
-      "serviceable": true,
-      "sha512": "OKv5IuNV2kbJGV13WGuoXMN0T6P7rLoBWTle8LURrvcQu4ctz3PXIszwM39N7xPHJcHyZ+MfBDcuqVL9zUgqKg==",
-      "files": [
-        "lib/dnx451/Microsoft.AspNet.Tooling.Razor.dll",
-        "lib/dnx451/Microsoft.AspNet.Tooling.Razor.xml",
-        "lib/dnxcore50/Microsoft.AspNet.Tooling.Razor.dll",
-        "lib/dnxcore50/Microsoft.AspNet.Tooling.Razor.xml",
-        "Microsoft.AspNet.Tooling.Razor.1.0.0-beta6.nupkg",
-        "Microsoft.AspNet.Tooling.Razor.1.0.0-beta6.nupkg.sha512",
-        "Microsoft.AspNet.Tooling.Razor.nuspec"
       ]
     },
     "Microsoft.AspNet.WebUtilities/1.0.0-beta6": {
@@ -7705,7 +7298,7 @@
     "": [
       "Microsoft.AspNet.Server.IIS >= 1.0.0-beta6",
       "Microsoft.AspNet.Server.WebListener >= 1.0.0-beta6",
-      "CodeComb.vNext >= 1.0.31",
+      "CodeComb.vNext >= 1.0.32",
       "Microsoft.AspNet.Mvc >= 6.0.0-beta6",
       "EntityFramework.Sqlite >= 7.0.0-beta6",
       "CodeComb.Marked >= 1.0.1",
