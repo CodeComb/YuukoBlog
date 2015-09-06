@@ -1,0 +1,68 @@
+﻿@model Post
+@if (Html.IsRaw())
+{
+    @(new HtmlString("<div>"))
+    <div id="raw_info">
+        <div class="role-title">@Model.Title - @ViewBag.Description</div>
+        @if (Model.CatalogId.HasValue)
+        { 
+        <div class="role-body-class">@Model.Catalog.Url.ToLower()</div>
+        <div class="role-category">@Model.Catalog.Title</div>
+        }
+        else
+        {
+        <div class="role-body-class">home</div>
+        }
+        <div class="role-head-title">
+            <p><h1>@Model.Title</h1></p>
+            <p><h3><span class="icon-time icon"></span> Published on @Model.Time.ToString()</h3></p>
+        </div>
+    </div>
+}
+    <div class="cont-wrap">
+        <div class="grid_9">
+            <div class="post">
+                <div class="post-body">
+                    @Html.Marked(Model.Content)
+                </div>
+                @if (Html.IsAdmin())
+                {
+                <div class="post-edit">
+                    <p><input id="txtTitle" type="text" placeholder="标题" value="@Model.Title" /></p>
+                    <p><input id="txtUrl" type="text" placeholder="URL" value="@Model.Url" /></p>
+                    <p>
+                        <select id="lstCatalogs">
+                            <option value="">未分类</option>
+                            @foreach (CatalogViewModel c in ViewBag.Catalogs)
+                            {
+                                <!option value="@c.Id" @(Model.CatalogId == c.Id ? "selected" : "")>@c.Title</!option>
+                            }
+                        </select>
+                    </p>
+                    <p>
+                        <textarea id="txtContent" class="markdown-textbox" placeholder="文章内容使用Markdown编码，同样您可以使用HTML代码来编辑您的文章。您可以拖拽图片至编辑区或直接通过剪贴板粘贴，图片将会自动上传。">@(new HtmlString(Model.Content))</textarea>
+                    </p>
+                    <p>
+                        <input type="text" id="txtTags" placeholder="标签用,分隔" value="@Html.TagSerialize(Model.Tags)" />
+                    </p>
+                    <p>
+                        <input type="checkbox" id="chkIsPage" @(Model.IsPage ? "checked" : "") /> 是否为页面
+                    </p>
+                    <p>
+                        <input type="button" id="btnSavePost" onclick="savePost('@Model.Url')" value="保存" class="more-link" />
+                        <a href="javascript:$('.post-edit').slideUp();$('.post-body').slideDown();" yuuko-static>取消编辑</a>
+                    </p>
+                </div>
+                }
+            </div>
+            <div class="comments">
+                <h2>Comments</h2>
+                <div id="disqus_thread"></div>
+            </div>
+        </div>
+        @Html.Partial("Sidebar");
+    </div>
+@if (Html.IsRaw())
+{
+    @(new HtmlString("</div>"))
+}
