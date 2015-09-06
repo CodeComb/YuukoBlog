@@ -1,5 +1,5 @@
 # YuukoBlog vNext version
-- Visual Studio 2015 with web development tools beta 6
+- Visual Studio 2015 with web development tools beta 7
 - SQLite v3
 - DNX 4.5.1 / DNX Core 5 beta 7
 - Mvc 6 beta 7
