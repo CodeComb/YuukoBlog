@@ -17,11 +17,13 @@
     "Microsoft.AspNet.Mvc.TagHelpers": "6.0.0-beta7",
     "Microsoft.Framework.Configuration.Json": "1.0.0-beta7",
     "EntityFramework.SqlServer": "7.0.0-beta7",
-    "Microsoft.AspNet.StaticFiles": "1.0.0-beta7"
+    "Microsoft.AspNet.StaticFiles": "1.0.0-beta7",
+    "Microsoft.AspNet.Server.Kestrel": "1.0.0-beta7"
   },
 
   "commands": {
-    "web": "Microsoft.AspNet.Hosting --config hosting.ini"
+    "web": "Microsoft.AspNet.Hosting --config hosting.ini",
+    "kestrel": "Microsoft.AspNet.Hosting --server Microsoft.AspNet.Server.Kestrel --config hosting.ini"
   },
 
   "frameworks": {
