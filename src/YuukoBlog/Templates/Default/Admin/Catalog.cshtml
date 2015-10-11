@@ -1,16 +1,16 @@
 ﻿@model IEnumerable<Catalog>
 @{
-    ViewBag.Title = "管理后台";
+    ViewBag.Title = SR["Admin Panel"];
 }
 @if (Html.IsRaw())
 {
     @(new HtmlString("<div>"))
     <div id="raw_info">
-        <div class="role-title">管理后台</div>
+        <div class="role-title">@ViewBag.Title</div>
         <div class="role-body-class">home</div>
         <div class="role-category">home</div>
         <div class="role-head-title">
-            <h1>管理后台</h1>
+            <h1>@ViewBag.Title</h1>
         </div>
     </div>
 }
@@ -19,7 +19,7 @@
         <div class="post">
             <div class="post-body">
                 <p>
-                    <a yuuko-static href="javascript:$('#frmNewCatalog').submit();">新建分类</a>
+                    <a yuuko-static href="javascript:$('#frmNewCatalog').submit();">@SR["New Catalog"]</a>
                 </p>
                 <form asp-action="CatalogDelete" asp-controller="Admin" method="post" id="frmDeleteCatalog"></form>
                 <form asp-action="CatalogEdit" asp-controller="Admin" method="post" id="frmEditCatalog"></form>
@@ -27,10 +27,10 @@
                 <table class="table">
                     <thead>
                         <tr>
-                            <th>标题</th>
-                            <th>英文标题</th>
-                            <th>排序</th>
-                            <th>操作</th>
+                            <th>@SR["Title"]</th>
+                            <th>@SR["Sub Title"]</th>
+                            <th>@SR["Order"]</th>
+                            <th>@SR["Control"]</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -44,10 +44,10 @@
                                 <td class="editing"><input class="title" type="text" value="@x.Url" /></td>
                                 <td class="editing"><input class="order" type="text" value="@x.PRI" /></td>
                                 <td>
-                                    <a class="display" href="javascript:editCatalog('@x.Url');">编辑</a>
-                                    <a class="display" href="javascript:deleteCatalog('@x.Url');">删除</a>
-                                    <a class="editing" href="javascript:saveCatalog('@x.Url');">保存</a>
-                                    <a class="editing" href="javascript:cancelEditCatalog();">取消</a>
+                                    <a class="display" href="javascript:editCatalog('@x.Url');">@SR["Edit"]</a>
+                                    <a class="display" href="javascript:deleteCatalog('@x.Url');">@SR["Remove"]</a>
+                                    <a class="editing" href="javascript:saveCatalog('@x.Url');">@SR["Save"]</a>
+                                    <a class="editing" href="javascript:cancelEditCatalog();">@SR["Cancel"]</a>
                                 </td>
                             </tr>
                         }

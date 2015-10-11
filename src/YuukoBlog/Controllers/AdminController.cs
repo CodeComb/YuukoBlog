@@ -9,8 +9,6 @@ using Microsoft.Data.Entity;
 using YuukoBlog.Filters;
 using YuukoBlog.Models;
 
-// For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
-
 namespace YuukoBlog.Controllers
 {
     public class AdminController : BaseController
@@ -29,18 +27,16 @@ namespace YuukoBlog.Controllers
         [Route("Admin/Index")]
         public IActionResult Index(Config config, string OldPwd)
         {
-            if (OldPwd == Startup.Configuration["Password"])
+            if (OldPwd == Configuration["Password"])
             {
-                Startup.Configuration["Account"] = config.Account;
-                Startup.Configuration["Password"] = config.Password;
+                Configuration["Account"] = config.Account;
+                Configuration["Password"] = config.Password;
             }
-            Startup.Configuration["Site"] = config.Site;
-            Startup.Configuration["Description"] = config.Description;
-            Startup.Configuration["DefaultTemplate"] = config.DefaultTemplate;
-            Startup.Configuration["Disqus"] = config.Disqus;
-            Startup.Configuration["AvatarUrl"] = config.AvatarUrl;
-            Startup.Configuration["AboutUrl"] = config.AboutUrl;
-            Template.DefaultTemplate = config.DefaultTemplate;
+            Configuration["Site"] = config.Site;
+            Configuration["Description"] = config.Description;
+            Configuration["Disqus"] = config.Disqus;
+            Configuration["AvatarUrl"] = config.AvatarUrl;
+            Configuration["AboutUrl"] = config.AboutUrl;
             return RedirectToAction("Index", "Admin");
         }
 
@@ -55,10 +51,10 @@ namespace YuukoBlog.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Login(string Username, string Password)
         {
-            var tmp = Startup.Configuration["Account"];
-            if (Username == Startup.Configuration["Account"] && Password == Startup.Configuration["Password"])
+            var tmp = Configuration["Account"];
+            if (Username == Configuration["Account"] && Password == Configuration["Password"])
             {
-                Context.Session.SetString("Admin", "true");
+                HttpContext.Session.SetString("Admin", "true");
                 return RedirectToAction("Index", "Admin");
             }
             else
@@ -77,7 +73,14 @@ namespace YuukoBlog.Controllers
                 .Include(x => x.Tags)
                 .Where(x => x.Url == id)
                 .SingleOrDefault();
-            if (post == null) return Error(404);
+            if (post == null) return Prompt(new Prompt
+            {
+                StatusCode = 404,
+                Title = SR["Not Found"],
+                Details = SR["The resources have not been found, please check your request."],
+                RedirectUrl = Url.Link("default", new { controller = "Home", action = "Index" }),
+                RedirectText = SR["Back to home"]
+            });
             var summary = "";
             var tmp = content.Split('\n');
             if (tmp.Count() > 16)
@@ -86,7 +89,7 @@ namespace YuukoBlog.Controllers
                 {
                     summary += tmp[i] + '\n';
                 }
-                summary += "\r\n[Read More »](/post/" + newId + ')';
+                summary += $"\r\n[{SR["Read More"]} »](/post/{newId})";
             }
             else
             {
@@ -121,7 +124,14 @@ namespace YuukoBlog.Controllers
                 .Where(x => x.Url == id).SingleOrDefault();
             
             if (post == null)
-                return Error(404);
+                return Prompt(new Prompt
+                {
+                    StatusCode = 404,
+                    Title = SR["Not Found"],
+                    Details = SR["The resources have not been found, please check your request."],
+                    RedirectUrl = Url.Link("default", new { controller = "Home", action = "Index" }),
+                    RedirectText = SR["Back to home"]
+                });
             foreach (var t in post.Tags)
                 DB.PostTags.Remove(t);
             DB.Posts.Remove(post);
@@ -139,7 +149,7 @@ namespace YuukoBlog.Controllers
             {
                 Id = Guid.NewGuid(),
                 Url = Guid.NewGuid().ToString().Substring(0, 8),
-                Title = "Untitled Post",
+                Title = SR["Untitled Post"],
                 Content = "",
                 Summary = "",
                 CatalogId = null,
@@ -156,7 +166,7 @@ namespace YuukoBlog.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Logout()
         {
-            Context.Session.Clear();
+            HttpContext.Session.Clear();
             return RedirectToAction("Index", "Home");
         }
 
@@ -174,7 +184,14 @@ namespace YuukoBlog.Controllers
         {
             var catalog = DB.Catalogs.Where(x => x.Url == id).SingleOrDefault();
             if (catalog == null)
-                return Error(404);
+                return Prompt(new Prompt
+                {
+                    StatusCode = 404,
+                    Title = SR["Not Found"],
+                    Details = SR["The resources have not been found, please check your request."],
+                    RedirectUrl = Url.Link("default", new { controller = "Home", action = "Index" }),
+                    RedirectText = SR["Back to home"]
+                });
             DB.Catalogs.Remove(catalog);
             DB.SaveChanges();
             return Content("true");
@@ -188,8 +205,14 @@ namespace YuukoBlog.Controllers
         {
             var catalog = DB.Catalogs.Where(x => x.Url == id).SingleOrDefault();
             if (catalog == null)
-                return Error(404);
-            catalog.Url = newId;
+                return Prompt(new Prompt
+                {
+                    StatusCode = 404,
+                    Title = SR["Not Found"],
+                    Details = SR["The resources have not been found, please check your request."],
+                    RedirectUrl = Url.Link("default", new { controller = "Home", action = "Index" }),
+                    RedirectText = SR["Back to home"]
+                }); catalog.Url = newId;
             catalog.Title = title;
             catalog.PRI = pri;
             DB.SaveChanges();
@@ -206,7 +229,7 @@ namespace YuukoBlog.Controllers
             {
                 Url = Guid.NewGuid().ToString().Substring(0, 8),
                 PRI = 0,
-                Title = "New Catalog"
+                Title = SR["New Catalog"]
             };
             DB.Catalogs.Add(catalog);
             DB.SaveChanges();

@@ -1,29 +1,27 @@
 {
   "webroot": "wwwroot",
-  "version": "1.0.0-*",
+  "version": "2.0.0-*",
 
   "dependencies": {
-    "Microsoft.Data.Sqlite": "1.0.0-beta8-15549",
-    "Microsoft.AspNet.Server.IIS": "1.0.0-beta7",
-    "Microsoft.AspNet.Server.WebListener": "1.0.0-beta7",
-    "CodeComb.vNext": "1.0.35",
-    "Microsoft.AspNet.Mvc": "6.0.0-beta7",
-    "EntityFramework.Sqlite": "7.0.0-beta7",
-    "CodeComb.Marked": "1.0.2",
-    "Microsoft.Framework.Logging": "1.0.0-beta7",
-    "Microsoft.Framework.Logging.Console": "1.0.0-beta7",
-    "Microsoft.Framework.Logging.Debug" : "1.0.0-beta7",
-    "Microsoft.AspNet.Session": "1.0.0-beta7",
-    "Microsoft.AspNet.Mvc.TagHelpers": "6.0.0-beta7",
-    "Microsoft.Framework.Configuration.Json": "1.0.0-beta7",
-    "EntityFramework.SqlServer": "7.0.0-beta7",
-    "Microsoft.AspNet.StaticFiles": "1.0.0-beta7",
-    "Microsoft.AspNet.Server.Kestrel": "1.0.0-beta7"
+    "Microsoft.AspNet.Server.WebListener": "1.0.0-*",
+    "Microsoft.AspNet.Server.Kestrel": "1.0.0-*",
+    "CodeComb.AspNet.Localization": "2.0.0-*",
+    "CodeComb.AspNet.Extensions": "2.0.0-*",
+    "CodeComb.Marked": "2.0.0-*",
+    "Microsoft.AspNet.Mvc": "6.0.0-*",
+    "Microsoft.AspNet.Session": "1.0.0-*",
+    "EntityFramework.Sqlite": "7.0.0-*",
+    "Microsoft.Extensions.Logging": "1.0.0-*",
+    "Microsoft.Extensions.Logging.Console": "1.0.0-*",
+    "Microsoft.Extensions.Logging.Debug": "1.0.0-*",
+    "Microsoft.AspNet.Mvc.TagHelpers": "6.0.0-*",
+    "EntityFramework.SqlServer": "7.0.0-*",
+    "Microsoft.AspNet.StaticFiles": "1.0.0-*"
   },
 
   "commands": {
-    "web": "Microsoft.AspNet.Hosting --config hosting.ini",
-    "kestrel": "Microsoft.AspNet.Hosting --server Microsoft.AspNet.Server.Kestrel --config hosting.ini"
+    "kestrel": "Microsoft.AspNet.Hosting --server Microsoft.AspNet.Server.Kestrel --config hosting.json",
+    "web": "Microsoft.AspNet.Hosting --server Microsoft.AspNet.Server.WebListener --config hosting.json"
   },
 
   "frameworks": {

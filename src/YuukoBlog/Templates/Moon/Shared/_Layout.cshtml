@@ -104,9 +104,9 @@
             Copyright(C) 2014-2015 <a href="http://www.1234.sh" class="profile">www.1234.sh</a>
             Template: 
             <select id="lstTemplate">
-                @foreach (CodeComb.vNext.Models.Template t in ViewBag.Templates)
+                @foreach (var t in Template.Collection.Templates)
                 {
-                    <!option @(Html.GetTemplateFolder() == t.Folder ? "selected" : "") value="@t.Folder">@t.Title</!option>
+                                    <!option @(Template.Current.Identifier == t.Identifier ? "selected" : "") value="@t.Identifier">@t.Title</!option>
                 }
             </select>
         </div>

@@ -7,17 +7,14 @@ using Microsoft.AspNet.Http;
 using Microsoft.AspNet.Http.Extensions;
 using YuukoBlog.Models;
 
-// For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
-
 namespace YuukoBlog.Controllers
 {
     public class FileController : BaseController
     {
-        // GET: /<controller>/
         [HttpPost]
         public IActionResult Upload(IFormFile file)
         {
-            if (Context.Session.GetString("Admin") != "true")
+            if (HttpContext.Session.GetString("Admin") != "true")
                 return Json(new
                 {
                     code = 403,
@@ -50,7 +47,7 @@ namespace YuukoBlog.Controllers
         [HttpPost]
         public IActionResult Base64String(string file)
         {
-            if (Context.Session.GetString("Admin") != "true")
+            if (HttpContext.Session.GetString("Admin") != "true")
                 return Json(new
                 {
                     code = 403,
@@ -87,8 +84,14 @@ namespace YuukoBlog.Controllers
                 .Where(x => x.Id == id)
                 .SingleOrDefault();
             if (file == null)
-                return Error(404);
-            return File(file.File, file.ContentType, file.FileName);
+                return Prompt(new Prompt
+                {
+                    StatusCode = 404,
+                    Title = SR["Not Found"],
+                    Details = SR["The resources have not been found, please check your request."],
+                    RedirectUrl = Url.Link("default", new { controller = "Home", action = "Index" }),
+                    RedirectText = SR["Back to home"]
+                }); return File(file.File, file.ContentType, file.FileName);
         }
     }
 }
