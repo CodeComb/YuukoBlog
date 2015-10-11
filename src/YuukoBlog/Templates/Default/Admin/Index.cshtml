@@ -1,15 +1,15 @@
 ﻿@{
-    ViewBag.Title = "管理后台";
+    ViewBag.Title = SR["Admin Panel"];
 }
 @if (Html.IsRaw())
 {
     @(new HtmlString("<div>"))
     <div id="raw_info">
-        <div class="role-title">管理后台</div>
+        <div class="role-title">@ViewBag.Title</div>
         <div class="role-body-class">home</div>
         <div class="role-category">home</div>
         <div class="role-head-title">
-            <h1>管理后台</h1>
+            <h1>@ViewBag.Title</h1>
         </div>
     </div>
 }
@@ -19,24 +19,15 @@
             <div class="post-body">
                 <form asp-action="Index" asp-controller="Admin" method="post" id="frmConfig">
                     <p>
-                        网站名称: <br />
+                        @SR["Site name"]: <br />
                         <input type="text" name="site" value="@ViewBag.Site" />
                     </p>
                     <p>
-                        默认模板: <br />
-                        <select name="DefaultTemplate">
-                            @foreach (CodeComb.vNext.Models.Template t in ViewBag.Templates)
-                            { 
-                                <!option @(t.Folder == ViewBag.DefaultTemplate?"selected":"")>@t.Folder</!option>
-                            }
-                        </select>
-                    </p>
-                    <p>
-                        网站介绍: <br />
+                        @SR["Description"]: <br />
                         <input type="text" name="description" value="@ViewBag.Description" />
                     </p>
                     <p>
-                        头像URL: <br />
+                        @SR["Avatar URL"]: <br />
                         <input type="text" name="avatarUrl" value="@ViewBag.AvatarUrl" />
                     </p>
                     <p>
@@ -44,19 +35,19 @@
                         <input type="text" name="disqus" value="@ViewBag.Disqus" />
                     </p>
                     <p>
-                        关于URL: <br />
+                        @SR["About-me URL"]: <br />
                         <input type="text" name="aboutUrl" value="@ViewBag.AboutUrl" />
                     </p>
                     <p>
-                        用户名: <br />
-                        <input type="text" name="Account" value="@ViewBag.UserName" />
+                        @SR["User Name"]: <br />
+                        <input type="text" name="Account" value="@ViewBag.Account" />
                     </p>
                     <p>
-                        密码: <br />
+                        @SR["Password"]: <br />
                         <input type="password" name="password" value="" />
                     </p>
                     <p>
-                        <input type="button" value="保存" onclick="saveConfig()" />
+                        <input type="button" value="@SR["Save"]" onclick="saveConfig()" />
                     </p>
                 </form>
             </div>

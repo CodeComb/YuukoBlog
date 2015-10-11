@@ -26,10 +26,10 @@
                 {
                 <div class="sidebar-post-category sidebar-item">
                     <div class="sidebar-post-tag-item">
-                        <a href="javascript:DropEnable();$('.post-body').slideUp();$('.post-edit').slideDown();" yuuko-static>编辑文章</a>
+                        <a href="javascript:DropEnable();$('.post-body').slideUp();$('.post-edit').slideDown();" yuuko-static>@SR["Edit this post"]</a>
                     </div>
                     <div class="sidebar-post-tag-item">
-                        <a href="javascript:$('#frmDeletePost').submit();" yuuko-static>删除文章</a>
+                        <a href="javascript:$('#frmDeletePost').submit();" yuuko-static>@SR["Remove this post"]</a>
                     </div>
                     <form id="frmDeletePost" asp-action="PostDelete" asp-controller="Admin" method="post" asp-route-id="@Model.Url">
                     </form>
