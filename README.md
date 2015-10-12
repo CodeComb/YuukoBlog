@@ -4,7 +4,7 @@ AppVeyor: [![Build status](https://ci.appveyor.com/api/projects/status/9m9i5bxln
 
 Travis: [![Build status](https://travis-ci.org/CodeComb/YuukoBlog.svg)](https://travis-ci.org/CodeComb/YuukoBlog)
 
-- ASP.Net 5 Preview
+- ASP.Net 5 Preview Beta 8
 - SQLite v3
 - DNX 4.5.1 / DNX Core 5
 - Mvc 6

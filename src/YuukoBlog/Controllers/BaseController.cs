@@ -4,8 +4,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Mvc;
 using Microsoft.Data.Entity;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Framework.Configuration;
+using Microsoft.Framework.DependencyInjection;
 using CodeComb.AspNet.Localization;
 using YuukoBlog.Models;
 
@@ -21,7 +21,7 @@ namespace YuukoBlog.Controllers
             base.Prepare();
 
             // Building Constants
-            ViewBag.Position = SR["home"];
+            ViewBag.Position = "home";
             ViewBag.IsPost = false;
             ViewBag.Description = Configuration["Description"];
             ViewBag.Title = Configuration["Site"];
