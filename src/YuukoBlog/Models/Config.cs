@@ -11,7 +11,6 @@ namespace YuukoBlog.Models
         public string Password { get; set; }
         public string Site { get; set; }
         public string Description { get; set; }
-        public string DefaultTemplate { get; set; }
         public string Disqus { get; set; }
         public string AvatarUrl { get; set; }
         public string AboutUrl { get; set; }

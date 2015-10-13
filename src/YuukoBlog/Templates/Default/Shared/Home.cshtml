@@ -46,19 +46,6 @@
             }
         </div>
         @Html.MakePager("post-nav-page", "post-nav-page-current", "post-nav")
-        @*<div class="post-nav">
-            <% for (var i = 1; i <= pageCount; i++) { %>
-            <% if (typeof(req.params.catalog) == 'undefined' && typeof(req.params.year) == 'undefined' && typeof(req.params.tag) == 'undefined') { %>
-            <a class="post-nav-page <%= req.params.page == null && i == 1 || req.params.page == i ? 'post-nav-page-current' : '' %>" href="/page/<%= i %>"><%= i %></a>
-            <% } else if (typeof(req.params.catalog) != 'undefined') { %>
-            <a class="post-nav-page <%= req.params.page == null && i == 1 || req.params.page == i ? 'post-nav-page-current' : '' %>" href="/catalog/<%= req.params.catalog %>/<%= i %>"><%= i %></a>
-            <% } else if (typeof(req.params.tag) != 'undefined') { %>
-            <a class="post-nav-page <%= req.params.page == null && i == 1 || req.params.page == i ? 'post-nav-page-current' : '' %>" href="/tag/<%= req.params.tag %>/<%= i %>"><%= i %></a>
-            <% } else { %>
-            <a class="post-nav-page <%= req.params.page == null && i == 1 || req.params.page == i ? 'post-nav-page-current' : '' %>" href="/calendar/<%= req.params.year %>/<%= req.params.month %>/<%= i %>"><%= i %></a>
-            <% } %>
-            <% } %>
-        </div>*@
         <div class="clear"></div>
     </div>
     @Html.Partial("Sidebar")

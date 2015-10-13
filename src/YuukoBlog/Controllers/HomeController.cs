@@ -6,13 +6,10 @@ using Microsoft.AspNet.Mvc;
 using Microsoft.Data.Entity;
 using YuukoBlog.Models;
 
-// For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
-
 namespace YuukoBlog.Controllers
 {
     public class HomeController : BaseController
     {
-        // GET: /<controller>/
         [Route("{p:int?}")]
         public IActionResult Index(int p = 1)
         {
@@ -43,7 +40,14 @@ namespace YuukoBlog.Controllers
                 .Where(x => x.Url == id)
                 .SingleOrDefault();
             if (catalog == null)
-                return Error(404);
+                return Prompt(new Prompt
+                {
+                    StatusCode = 404,
+                    Title = SR["Not Found"],
+                    Details = SR["The resources have not been found, please check your request."],
+                    RedirectUrl = Url.Link("default", new { controller = "Home", action = "Index" }),
+                    RedirectText = SR["Back to home"]
+                });
             ViewBag.Position = catalog.Url;
             return PagedView<PostViewModel, Post>(DB.Posts
                 .Include(x => x.Tags)
@@ -74,10 +78,10 @@ namespace YuukoBlog.Controllers
                     .OrderByDescending(x => x.Time), 5, "Home");
         }
 
-        public new IActionResult Template(string Folder)
+        public new IActionResult Template(string Folder, [FromHeader] string Referer)
         {
-            Cookies["_template"] = Folder;
-            return Redirect(Request.Headers.Get("Referer") ?? "/");
+            Cookies["ASPNET_TEMPLATE"] = Folder;
+            return Redirect(Referer ?? "/");
         }
     }
 }

@@ -17,45 +17,34 @@ namespace YuukoBlog
 {
     public class Startup
     {
-        public Startup(IHostingEnvironment env, IApplicationEnvironment appEnv)
-        {
-            // Setup configuration sources.
-            var builder = new ConfigurationBuilder(appEnv.ApplicationBasePath)
-                .AddJsonFile("config.json")
-                .AddJsonFile($"config.{env.EnvironmentName}.json", optional: true);
-
-            builder.AddEnvironmentVariables();
-            Configuration = builder.Build();
-        }
-
-        public static IConfiguration Configuration { get; set; }
-
         public void ConfigureServices(IServiceCollection services)
         {
+            IConfiguration Configuration;
+            services.AddConfiguration(out Configuration);
             var appEnv = services.BuildServiceProvider().GetRequiredService<IApplicationEnvironment>();
-
             var connStr = "Data source=" + appEnv.ApplicationBasePath + "/" + Configuration["DBFile"] + ";";
             if (connStr.IndexOf('\\') >= 0)
                 connStr = connStr.Replace("/", "\\");
 
-            Console.WriteLine(connStr);
+            services.AddSmartCookies();
 
-            services
-                .AddEntityFramework()
+            services.AddJsonLocalization()
+                .AddCookieCulture();
+
+            services.AddEntityFramework()
                 .AddSqlite()
                 .AddDbContext<BlogContext>(options =>
                     options.UseSqlite(connStr));
 
             services.AddCaching();
-            services.AddSession();
-            services.ConfigureSession(o =>
-            {
-                o.IdleTimeout = TimeSpan.FromMinutes(20);
-            });
-            services.AddMvc().AddTemplate(Configuration["DefaultTemplate"]);
+            services.AddSession(x => x.IdleTimeout = TimeSpan.FromMinutes(20));
+
+            services.AddMvc()
+                .AddTemplate()
+                .AddCookieTemplateProvider();
         }
 
-        public async void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+        public async void Configure(IApplicationBuilder app, ILoggerFactory loggerFactory)
         {
             loggerFactory.MinimumLevel = LogLevel.Information;
             loggerFactory.AddConsole();
@@ -63,7 +52,7 @@ namespace YuukoBlog
 
             app.UseStaticFiles();
             app.UseSession();
-            
+
             app.UseMvc(router =>
             {
                 router.MapRoute(

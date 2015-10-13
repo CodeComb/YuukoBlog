@@ -5,8 +5,6 @@ using System.Threading.Tasks;
 using Microsoft.AspNet.Mvc;
 using Microsoft.Data.Entity;
 
-// For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
-
 namespace YuukoBlog.Controllers
 {
     public class PostController : BaseController
@@ -20,8 +18,14 @@ namespace YuukoBlog.Controllers
                 .Where(x => x.Url == id && !x.IsPage)
                 .SingleOrDefault();
             if (post == null)
-                return Error(404);
-            ViewBag.Title = post.Title;
+                return Prompt(new Prompt
+                {
+                    StatusCode = 404,
+                    Title = SR["Not Found"],
+                    Details = SR["The resources have not been found, please check your request."],
+                    RedirectUrl = Url.Link("default", new { controller = "Home", action = "Index" }),
+                    RedirectText = SR["Back to home"]
+                }); ViewBag.Title = post.Title;
             ViewBag.Position = post.CatalogId != null ? post.Catalog.Url : "home";
             return View(post);
         }
@@ -33,8 +37,14 @@ namespace YuukoBlog.Controllers
                 .Where(x => x.Url == id && x.IsPage)
                 .SingleOrDefault();
             if (post == null)
-                return Error(404);
-            ViewBag.Title = post.Title;
+                return Prompt(new Prompt
+                {
+                    StatusCode = 404,
+                    Title = SR["Not Found"],
+                    Details = SR["The resources have not been found, please check your request."],
+                    RedirectUrl = Url.Link("default", new { controller = "Home", action = "Index" }),
+                    RedirectText = SR["Back to home"]
+                }); ViewBag.Title = post.Title;
             ViewBag.Position = post.CatalogId.HasValue ? post.Catalog.Url : "home";
             return View("Post", post);
         }

@@ -6,28 +6,31 @@ using Microsoft.AspNet.Mvc;
 using Microsoft.Data.Entity;
 using Microsoft.Framework.Configuration;
 using Microsoft.Framework.DependencyInjection;
+using CodeComb.AspNet.Localization;
 using YuukoBlog.Models;
 
 namespace YuukoBlog.Controllers
 {
     public class BaseController : BaseController<BlogContext>
     {
-        protected override void Prepare()
+        [FromServices]
+        public ILocalizationStringCollection SR { get; set; }
+
+        public override void Prepare()
         {
             base.Prepare();
 
             // Building Constants
             ViewBag.Position = "home";
             ViewBag.IsPost = false;
-            ViewBag.Description = Startup.Configuration["Description"];
-            ViewBag.Title = Startup.Configuration["Site"];
-            ViewBag.Site = Startup.Configuration["Site"];
-            ViewBag.AboutUrl = Startup.Configuration["AboutUrl"];
-            ViewBag.AvatarUrl = Startup.Configuration["AvatarUrl"];
-            ViewBag.Disqus = Startup.Configuration["Disqus"];
-            ViewBag.Account = Startup.Configuration["Account"];
-            ViewBag.DefaultTemplate = Startup.Configuration["DefaultTemplate"];
-            ViewBag.Templates = Templates;
+            ViewBag.Description = Configuration["Description"];
+            ViewBag.Title = Configuration["Site"];
+            ViewBag.Site = Configuration["Site"];
+            ViewBag.AboutUrl = Configuration["AboutUrl"];
+            ViewBag.AvatarUrl = Configuration["AvatarUrl"];
+            ViewBag.Disqus = Configuration["Disqus"];
+            ViewBag.Account = Configuration["Account"];
+            ViewBag.DefaultTemplate = Configuration["DefaultTemplate"];
 
             // Building Tags
             ViewBag.Tags = DB.PostTags
@@ -54,7 +57,6 @@ namespace YuukoBlog.Controllers
                 .ToList();
 
             // Building Catalogs
-            // Issue: 由于EF7 beta6不允许在查询过程中Join，因此这里写的有点略SB
             ViewBag.Catalogs = DB.Catalogs
                 .Include(x => x.Posts)
                 .OrderByDescending(x => x.PRI)
