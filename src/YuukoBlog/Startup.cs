@@ -8,9 +8,8 @@ using Microsoft.AspNet.Mvc;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Dnx.Runtime;
+using Microsoft.Extensions.PlatformAbstractions;
 using Microsoft.Data.Entity;
-using Microsoft.AspNet.Hosting;
 using YuukoBlog.Models;
 
 namespace YuukoBlog
