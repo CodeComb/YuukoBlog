@@ -22,26 +22,26 @@ namespace YuukoBlog.Models
 
             modelBuilder.Entity<Catalog>(e =>
             {
-                e.Index(x => x.PRI);
+                e.HasIndex(x => x.PRI);
             });
 
             modelBuilder.Entity<Post>(e =>
             {
-                e.Index(x => x.IsPage);
-                e.Index(x => x.Time);
-                e.Index(x => x.Url).Unique();
+                e.HasIndex(x => x.IsPage);
+                e.HasIndex(x => x.Time);
+                e.HasIndex(x => x.Url).IsUnique();
             });
 
             modelBuilder.Entity<PostTag>(e =>
             {
-                e.Index(x => x.Tag);
+                e.HasIndex(x => x.Tag);
             });
 
             modelBuilder.Entity<Blob>(e =>
             {
-                e.Index(x => x.Time);
-                e.Index(x => x.ContentLength);
-                e.Index(x => x.ContentType);
+                e.HasIndex(x => x.Time);
+                e.HasIndex(x => x.ContentLength);
+                e.HasIndex(x => x.ContentType);
             });
         }
     }
