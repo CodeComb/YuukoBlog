@@ -13,7 +13,7 @@ namespace YuukoBlog.Controllers
 {
     public class BaseController : BaseController<BlogContext>
     {
-        [FromServices]
+        [Inject]
         public ILocalizationStringCollection SR { get; set; }
 
         public override void Prepare()
@@ -21,7 +21,7 @@ namespace YuukoBlog.Controllers
             base.Prepare();
 
             // Building Constants
-            ViewBag.Position = SR["home"];
+            ViewBag.Position = "home";
             ViewBag.IsPost = false;
             ViewBag.Description = Configuration["Description"];
             ViewBag.Title = Configuration["Site"];
