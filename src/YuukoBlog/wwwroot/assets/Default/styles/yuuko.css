@@ -1604,12 +1604,12 @@ body {
     }
 
     .post-nav-page a, .post-nav-page a:active, .post-nav-page a:hover, .post-nav-page a:visited {
-        color: #222 !important;
+        /*color: #222 !important;*/
         text-decoration: none;
     }
 
 .post-nav-page-current {
-    background: #323232 !important;
+    background: #636363 !important;
 }
 
     .post-nav-page-current a {
@@ -1617,7 +1617,7 @@ body {
     }
 
     .post-nav-page-current:hover {
-        background: #636363 !important;
+        background: #323232 !important;
     }
 
     .post-nav-page-current:hover a {
