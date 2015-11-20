@@ -407,7 +407,7 @@ textarea {
     font-style: normal;
     font-weight: 400;
     src: url(/assets/default/fonts/opensans.eot);
-    src: local('Open Sans'),local('OpenSans'),url(/assets/default/fonts/opensans.eot) format('embedded-opentype'),url(/assets/default/fonts/opensans.woff) format('woff'),url(/assets/default/fonts/opensans.ttf) format('truetype'),url(/assets/default/fonts/opensans.svg#OpenSans) format('svg');
+    src: local('Open Sans'),local('OpenSans'),url(/assets/default/fonts/opensans.eot) format('embedded-opentype'),url(/assets/default/fonts/opensans-light.woff) format('woff'),url(/assets/default/fonts/opensans-light.ttf) format('truetype'),url(/assets/default/fonts/opensans.svg#OpenSans) format('svg');
 }
 
 @font-face {
