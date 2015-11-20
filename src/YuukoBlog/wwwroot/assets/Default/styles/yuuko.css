@@ -1165,7 +1165,6 @@ a, a:visited {
 
 .page-header-li {
     float: left;
-    width: 100px;
     height: 80px;
     display: block;
     -webkit-transition: background-color .2s linear;
@@ -1205,13 +1204,13 @@ a, a:visited {
 
 .page-header-li-t {
     line-height: 30px;
-    padding: 0 10px;
+    padding: 0 20px;
     color: #fff;
 }
 
 .page-header-li-d {
     font-size: .8em;
-    padding: 0 10px;
+    padding: 0 20px;
     line-height: 20px;
     color: rgba(255,255,255,.8);
 }
