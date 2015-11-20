@@ -14,7 +14,7 @@
                         <a class="page-header-li page-header-li-home @(ViewBag.Position == "home" ? "page-header-li-active" : "")" href="/"><div class="page-header-li-s"><div class="page-header-li-si"></div></div><div class="page-header-li-t">主页</div><div class="page-header-li-d">HOME</div></a>
                         @foreach (dynamic x in ViewBag.Catalogs)
                         {
-                            <a class="page-header-li page-header-li-@x.Url.ToLower() @(ViewBag.Position == x.Url.ToLower() ? "page-header-li-active" : "")" href="/catalog/@x.Url/"><div class="page-header-li-s"><div class="page-header-li-si"></div></div><div class="page-header-li-t">@x.Title</div><div class="page-header-li-d">@x.Url.ToUpper()</div></a>
+                            <a class="page-header-li page-header-li-@x.Url.ToLower() @(ViewBag.Position == x.Url.ToLower() ? "page-header-li-active" : "")" href="/catalog/@x.Url"><div class="page-header-li-s"><div class="page-header-li-si"></div></div><div class="page-header-li-t">@x.Title</div><div class="page-header-li-d">@x.Url.ToUpper()</div></a>
                         }
                         <div class="clear"></div>
                     </div><div class="clear"></div>

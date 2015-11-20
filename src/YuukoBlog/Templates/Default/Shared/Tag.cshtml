@@ -4,7 +4,7 @@
         <ul class="sidebar-list">
             @foreach (TagViewModel x in ViewBag.Tags)
             {
-                <li class="sidebar-item"><a href="/tag/@x.Title/">@x.Title (@x.Count)</a></li>
+                <li class="sidebar-item"><a href="/tag/@x.Title">@x.Title (@x.Count)</a></li>
             }
         </ul>
     </div>
