@@ -11,7 +11,7 @@ namespace YuukoBlog.Controllers
     public class HomeController : BaseController
     {
         [Route("{p:int?}")]
-        public IActionResult Index(int p = 1)
+        public IActionResult Index()
         {
             return PagedView<PostViewModel, Post>(DB.Posts
                 .Include(x => x.Catalog)
@@ -21,7 +21,7 @@ namespace YuukoBlog.Controllers
         }
 
         [Route("{year:int}/{month:int}/{p:int?}")]
-        public IActionResult Calendar(int year, int month, int p = 1)
+        public IActionResult Calendar(int year, int month)
         {
             var begin = new DateTime(year, month, 1);
             var end = begin.AddMonths(1);
@@ -57,7 +57,7 @@ namespace YuukoBlog.Controllers
         }
 
         [Route("Tag/{tag}/{p:int?}")]
-        public IActionResult Tag(string tag, int p = 1)
+        public IActionResult Tag(string tag)
         {
             return PagedView<PostViewModel, Post>(DB.Posts
                  .Include(x => x.Tags)
@@ -68,7 +68,7 @@ namespace YuukoBlog.Controllers
         }
 
         [Route("Search/{id}/{p:int?}")]
-        public IActionResult Search(string id, int p = 1)
+        public IActionResult Search(string id)
         {
             return PagedView<PostViewModel, Post>(DB.Posts
                     .Include(x => x.Tags)
