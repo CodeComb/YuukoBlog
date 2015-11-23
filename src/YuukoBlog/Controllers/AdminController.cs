@@ -104,8 +104,9 @@ namespace YuukoBlog.Controllers
             post.CatalogId = catalog;
             post.IsPage = isPage;
             if (!string.IsNullOrEmpty(tags))
-            { 
-                var _tags = tags.Split(',');
+            {
+				//remove empty tag 
+                var _tags = tags.Split(new char[] {',', ' '}, StringSplitOptions.RemoveEmptyEntries);
                 foreach (var t in _tags)
                     post.Tags.Add(new PostTag { PostId = post.Id, Tag = t.Trim(' ') });
             }

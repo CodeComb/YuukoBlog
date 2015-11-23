@@ -10,10 +10,7 @@ namespace Microsoft.AspNet.Mvc.Rendering
     {
         public static string TagSerialize(this IHtmlHelper self, IEnumerable<PostTag> Tags)
         {
-            var ret = "";
-            foreach (var t in Tags)
-                ret += t.Tag + ", ";
-            return ret.TrimEnd(' ').TrimEnd(',');
+            return string.Join(", ", Tags.Select(t=>t.Tag));
         }
     }
 }
