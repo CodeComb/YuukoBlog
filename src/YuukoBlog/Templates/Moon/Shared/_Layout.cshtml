@@ -64,7 +64,7 @@
                     <ul>
                         @foreach (TagViewModel x in ViewBag.Tags)
                         {
-                            <li class='cat-item'>@Html.ActionLink(x.Title, "Calendar", "Home", new { tag = x.Title }, null)  (@x.Count)</li>
+                            <li class='cat-item'>@Html.ActionLink(x.Title, "Tag", "Home", new { tag = x.Title }, null)  (@x.Count)</li>
                         }
                     </ul>
                 </div>
@@ -106,7 +106,7 @@
             <select id="lstTemplate">
                 @foreach (var t in Template.Collection.Templates)
                 {
-                                    <!option @(Template.Current.Identifier == t.Identifier ? "selected" : "") value="@t.Identifier">@t.Title</!option>
+                    <!option @(Template.Current.Identifier == t.Identifier ? "selected" : "") value="@t.Identifier">@t.Title</!option>
                 }
             </select>
         </div>
