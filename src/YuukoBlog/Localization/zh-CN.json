@@ -1,7 +1,7 @@
 ﻿{
   "Set": "zh-CN",
   "Culture": [ "zh", "zh-Hans", "zh-Hans-CN" ],
-  "IsDefault": false,
+  "IsDefault": true,
   "LocalizedStrings": {
     "Not Found": "没有找到相关资源",
     "home": "首页",

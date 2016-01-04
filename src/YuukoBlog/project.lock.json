@@ -3,7 +3,7 @@
   "version": 2,
   "targets": {
     "DNX,Version=v4.5.1": {
-      "CodeComb.AspNet.Extensions/2.0.0-rc1-final": {
+      "CodeComb.AspNet.Extensions/2.0.0-rc1-final-2": {
         "type": "package",
         "dependencies": {
           "Microsoft.AspNet.Identity.EntityFramework": "3.0.0-rc1-final",
@@ -1934,7 +1934,7 @@
       }
     },
     "DNXCore,Version=v5.0": {
-      "CodeComb.AspNet.Extensions/2.0.0-rc1-final": {
+      "CodeComb.AspNet.Extensions/2.0.0-rc1-final-2": {
         "type": "package",
         "dependencies": {
           "Microsoft.AspNet.Identity.EntityFramework": "3.0.0-rc1-final",
@@ -4499,7 +4499,7 @@
       }
     },
     "DNX,Version=v4.5.1/win7-x86": {
-      "CodeComb.AspNet.Extensions/2.0.0-rc1-final": {
+      "CodeComb.AspNet.Extensions/2.0.0-rc1-final-2": {
         "type": "package",
         "dependencies": {
           "Microsoft.AspNet.Identity.EntityFramework": "3.0.0-rc1-final",
@@ -6436,7 +6436,7 @@
       }
     },
     "DNX,Version=v4.5.1/win7-x64": {
-      "CodeComb.AspNet.Extensions/2.0.0-rc1-final": {
+      "CodeComb.AspNet.Extensions/2.0.0-rc1-final-2": {
         "type": "package",
         "dependencies": {
           "Microsoft.AspNet.Identity.EntityFramework": "3.0.0-rc1-final",
@@ -8373,7 +8373,7 @@
       }
     },
     "DNXCore,Version=v5.0/win7-x86": {
-      "CodeComb.AspNet.Extensions/2.0.0-rc1-final": {
+      "CodeComb.AspNet.Extensions/2.0.0-rc1-final-2": {
         "type": "package",
         "dependencies": {
           "Microsoft.AspNet.Identity.EntityFramework": "3.0.0-rc1-final",
@@ -11488,7 +11488,7 @@
       }
     },
     "DNXCore,Version=v5.0/win7-x64": {
-      "CodeComb.AspNet.Extensions/2.0.0-rc1-final": {
+      "CodeComb.AspNet.Extensions/2.0.0-rc1-final-2": {
         "type": "package",
         "dependencies": {
           "Microsoft.AspNet.Identity.EntityFramework": "3.0.0-rc1-final",
@@ -14604,12 +14604,12 @@
     }
   },
   "libraries": {
-    "CodeComb.AspNet.Extensions/2.0.0-rc1-final": {
+    "CodeComb.AspNet.Extensions/2.0.0-rc1-final-2": {
       "type": "package",
-      "sha512": "rX0de9uNRBGOy8JrBJL+mNpGWyyyZ4zsqd/s+j8Sw05UVGgZWcpJJqqDxycqklI+zwfnCq6jHFIpzqnHDuqpBg==",
+      "sha512": "kMj9+Ytu7FsCK/8KHI7+NDB7ORcWJ+NUmod1YkL488GOwgmnQj0pyDG+sgfizML4YAr877InEPOs5OXrHIiQMA==",
       "files": [
-        "CodeComb.AspNet.Extensions.2.0.0-rc1-final.nupkg",
-        "CodeComb.AspNet.Extensions.2.0.0-rc1-final.nupkg.sha512",
+        "CodeComb.AspNet.Extensions.2.0.0-rc1-final-2.nupkg",
+        "CodeComb.AspNet.Extensions.2.0.0-rc1-final-2.nupkg.sha512",
         "CodeComb.AspNet.Extensions.nuspec",
         "lib/dotnet5.4/CodeComb.AspNet.Extensions.dll",
         "lib/dotnet5.4/CodeComb.AspNet.Extensions.xml",
@@ -20232,7 +20232,7 @@
       "Microsoft.AspNet.Server.WebListener >= 1.0.0-rc1-final",
       "Microsoft.AspNet.Server.Kestrel >= 1.0.0-rc1-final",
       "CodeComb.AspNet.Localization >= 2.0.0-rc1-final",
-      "CodeComb.AspNet.Extensions >= 2.0.0-rc1-final",
+      "CodeComb.AspNet.Extensions >= 2.0.0-rc1-final-2",
       "CodeComb.Marked >= 2.0.0-rc1-final",
       "Microsoft.AspNet.Mvc >= 6.0.0-rc1-final",
       "Microsoft.AspNet.Session >= 1.0.0-rc1-final",
