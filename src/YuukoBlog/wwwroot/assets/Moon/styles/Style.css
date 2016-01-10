@@ -660,7 +660,6 @@ input[type="submit"], #submit {
     }
 
     .wp-pagenavi .current {
-        padding: 5px inherit;
         font-weight: bold;
         background: #7c948b;
     }
