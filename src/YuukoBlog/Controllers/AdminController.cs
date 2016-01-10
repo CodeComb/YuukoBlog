@@ -27,11 +27,8 @@ namespace YuukoBlog.Controllers
         [Route("Admin/Index")]
         public IActionResult Index(Config config, string OldPwd)
         {
-            if (OldPwd == Configuration["Password"])
-            {
-                Configuration["Account"] = config.Account;
-                Configuration["Password"] = config.Password;
-            }
+            Configuration["Account"] = config.Account;
+            Configuration["Password"] = config.Password;
             Configuration["Site"] = config.Site;
             Configuration["Description"] = config.Description;
             Configuration["Disqus"] = config.Disqus;
