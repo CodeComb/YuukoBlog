@@ -79,6 +79,11 @@
                     </div>*@
                 <div class="module widget_meta">
                     <div class="title">功能</div>
+                    @if (Html.IsAdmin())
+                    {
+                        <form asp-action="PostNew" asp-controller="Admin" method="post" id="frmNewPost"></form>
+                        <form asp-action="Logout" asp-controller="Admin" method="post" id="frmLogout"></form>
+                    }
                     <ul>
                         @if (Html.IsAdmin())
                         {
@@ -86,8 +91,6 @@
                             <li><a href="javascript:$('#frmNewPost').submit();">发表文章</a></li>
                             <li>@Html.ActionLink("分类管理", "Catalog", "Admin", null, null)</li>
                             <li><a href="javascript:$('#frmLogout').submit();">注销登录</a></li>
-                            <form asp-action="PostNew" asp-controller="Admin" method="post" id="frmNewPost"></form>
-                            <form asp-action="Logout" asp-controller="Admin" method="post" id="frmLogout"></form>
                         }
                         else
                         {
@@ -106,11 +109,11 @@
             <select id="lstTemplate">
                 @foreach (var t in Template.Collection.Templates)
                 {
-                                    <!option @(Template.Current.Identifier == t.Identifier ? "selected" : "") value="@t.Identifier">@t.Title</!option>
+                    <!option @(Template.Current.Identifier == t.Identifier ? "selected" : "") value="@t.Identifier">@t.Title</!option>
                 }
             </select>
         </div>
-        <div class="engine">Powered by YuukoBlog</div>
+        <div class="engine">Powered by <a href="https://github.com/CodeComb/YuukoBlog">YuukoBlog</a></div>
         <div class="back"><a href="#" rel="nofollow" title="Top">返回顶部</a></div>
     </div>
 </body>

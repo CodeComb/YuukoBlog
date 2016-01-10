@@ -1556,7 +1556,7 @@
 }).call(this);
 
 function DropEnable() {
-    $('.markdown-textbox').each(function () {
+    $('.markdown-textbox').unbind().each(function () {
         if (!$(this).hasClass('dropper')) {
             $(this).dropper({
                 action: "/file/upload",
