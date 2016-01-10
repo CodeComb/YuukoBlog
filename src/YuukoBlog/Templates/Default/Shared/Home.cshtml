@@ -12,7 +12,7 @@
 {
     @(new HtmlString("<div>"))
     <div id="raw_info">
-        <div class="role-title">@ViewBag.Title - @ViewBag.SiteDescription</div>
+        <div class="role-title">@ViewBag.Title - @ViewBag.Description</div>
         <div class="role-body-class">@ViewBag.Position.ToLower()</div>
         <div class="role-category">@ViewBag.Position.ToLower()</div>
         <div class="role-head-title">
@@ -45,7 +45,7 @@
                 </div>
             }
         </div>
-        @Html.MakePager("post-nav-page", "post-nav-page-current", "post-nav")
+        @Html.MakePager("post-nav-page", "post-nav-page-current", "post-nav", null, new[] { "raw" })
         <div class="clear"></div>
     </div>
     @Html.Partial("Sidebar")

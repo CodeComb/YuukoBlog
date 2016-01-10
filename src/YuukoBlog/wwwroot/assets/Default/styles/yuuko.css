@@ -1605,7 +1605,7 @@ body {
     }
 
     .post-nav-page a, .post-nav-page a:active, .post-nav-page a:hover, .post-nav-page a:visited {
-        color: #222 !important;
+        color: #222;
         text-decoration: none;
     }
 
@@ -2010,4 +2010,8 @@ td input[type="text"], td input[type="password"] {
     border: none;
     background: none;
     color: rgba(255,255,255,.7);
+}
+
+.post-nav-page-current a {
+    color: #fff!important;
 }

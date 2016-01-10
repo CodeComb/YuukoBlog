@@ -40,7 +40,7 @@ namespace YuukoBlog
 
         public async void Configure(IApplicationBuilder app, ILoggerFactory loggerFactory)
         {
-            loggerFactory.MinimumLevel = LogLevel.Information;
+            loggerFactory.MinimumLevel = LogLevel.Warning;
             loggerFactory.AddConsole();
             loggerFactory.AddDebug();
 
