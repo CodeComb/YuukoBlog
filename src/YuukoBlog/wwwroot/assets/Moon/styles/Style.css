@@ -647,7 +647,8 @@ input[type="submit"], #submit {
         text-decoration: none;
     }
 
-        .wp-pagenavi a:hover {
+        .wp-pagenavi li:hover {
+            padding: 0px inherit;
             background: #7c94a0;
             text-decoration: none;
         }
@@ -660,10 +661,10 @@ input[type="submit"], #submit {
     }
 
     .wp-pagenavi .current {
+        padding: 0px inherit;
         font-weight: bold;
         background: #7c948b;
     }
-
 
     .wp-pagenavi .extend {
     }
