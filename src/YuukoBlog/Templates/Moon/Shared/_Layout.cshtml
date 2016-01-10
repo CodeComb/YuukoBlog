@@ -85,7 +85,7 @@
                             <li>@Html.ActionLink("站点设置", "Index", "Admin", null, null)</li>
                             <li><a href="javascript:$('#frmNewPost').submit();">发表文章</a></li>
                             <li>@Html.ActionLink("分类管理", "Catalog", "Admin", null, null)</li>
-                            <li><a href="javascript:$('#frmLogout').submit();"></a></li>
+                            <li><a href="javascript:$('#frmLogout').submit();">注销登录</a></li>
                             <form asp-action="PostNew" asp-controller="Admin" method="post" id="frmNewPost"></form>
                             <form asp-action="Logout" asp-controller="Admin" method="post" id="frmLogout"></form>
                         }
