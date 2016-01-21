@@ -33,6 +33,10 @@ namespace YuukoBlog
             services.AddCaching();
             services.AddSession(x => x.IdleTimeout = TimeSpan.FromMinutes(20));
 
+            services.AddFileUpload()
+                .AddEntityFrameworkStorage<BlogContext>()
+                .AddSessionUploadAuthorization();
+
             services.AddMvc()
                 .AddTemplate()
                 .AddCookieTemplateProvider();
@@ -46,6 +50,7 @@ namespace YuukoBlog
 
             app.UseStaticFiles();
             app.UseSession();
+            app.UseFileUpload("/assets/shared/scripts/jquery.codecomb.fileupload.js");
 
             app.UseMvc(router =>
             {
