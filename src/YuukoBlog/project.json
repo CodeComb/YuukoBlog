@@ -7,6 +7,7 @@
     "Microsoft.AspNet.Server.Kestrel": "1.0.0-rc1-final",
     "CodeComb.AspNet.Localization": "2.0.0-rc1-final",
     "CodeComb.AspNet.Extensions": "2.0.0-rc1-final-3",
+    "CodeComb.AspNet.Upload": "2.0.0-rc1-final",
     "CodeComb.Marked": "2.0.0-rc1-final",
     "Microsoft.AspNet.Mvc": "6.0.0-rc1-final",
     "Microsoft.AspNet.Session": "1.0.0-rc1-final",

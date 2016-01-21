@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.Data.Entity;
+using CodeComb.AspNet.Upload.Models;
 
 namespace YuukoBlog.Models
 {
-    public class BlogContext : DbContext
+    public class BlogContext : DbContext, IFileUploadDbContext
     {
         public DbSet<Post> Posts { get; set; }
 
@@ -14,7 +15,7 @@ namespace YuukoBlog.Models
 
         public DbSet<Catalog> Catalogs { get; set; }
 
-        public DbSet<Blob> Blobs { get; set; }
+        public DbSet<File> Files { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -35,13 +36,6 @@ namespace YuukoBlog.Models
             modelBuilder.Entity<PostTag>(e =>
             {
                 e.HasIndex(x => x.Tag);
-            });
-
-            modelBuilder.Entity<Blob>(e =>
-            {
-                e.HasIndex(x => x.Time);
-                e.HasIndex(x => x.ContentLength);
-                e.HasIndex(x => x.ContentType);
             });
         }
     }
