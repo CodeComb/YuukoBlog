@@ -21,6 +21,8 @@ namespace YuukoBlog.Models
         {
             base.OnModelCreating(modelBuilder);
 
+            modelBuilder.SetupBlob();
+
             modelBuilder.Entity<Catalog>(e =>
             {
                 e.HasIndex(x => x.PRI);

@@ -70,24 +70,28 @@ namespace YuukoBlog.Controllers
                 .Include(x => x.Tags)
                 .Where(x => x.Url == id)
                 .SingleOrDefault();
-            if (content == null)
-                content = "";
-            if (post == null) return Prompt(new Prompt
-            {
-                StatusCode = 404,
-                Title = SR["Not Found"],
-                Details = SR["The resources have not been found, please check your request."],
-                RedirectUrl = Url.Link("default", new { controller = "Home", action = "Index" }),
-                RedirectText = SR["Back to home"]
-            });
+            if (post == null)
+                return Prompt(new Prompt
+                {
+                    StatusCode = 404,
+                    Title = SR["Not Found"],
+                    Details = SR["The resources have not been found, please check your request."],
+                    RedirectUrl = Url.Link("default", new { controller = "Home", action = "Index" }),
+                    RedirectText = SR["Back to home"]
+                });
             var summary = "";
+            var flag = false;
             var tmp = content.Split('\n');
             if (tmp.Count() > 16)
             {
                 for (var i = 0; i < 16; i++)
                 {
+                    if (tmp[i].IndexOf("```") == 0)
+                        flag = !flag;
                     summary += tmp[i] + '\n';
                 }
+                if (flag)
+                    summary += "```\r\n";
                 summary += $"\r\n[{SR["Read More"]} »](/post/{newId})";
             }
             else
