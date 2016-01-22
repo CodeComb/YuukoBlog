@@ -25,7 +25,7 @@ namespace YuukoBlog.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Route("Admin/Index")]
-        public IActionResult Index(Config config, string OldPwd)
+        public IActionResult Index(Config config)
         {
             Configuration["Account"] = config.Account;
             Configuration["Password"] = config.Password;
@@ -64,7 +64,7 @@ namespace YuukoBlog.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Route("Admin/Post/Edit")]
-        public IActionResult PostEdit(string id, string newId, string content, string tags, bool isPage, string title, Guid? catalog)
+        public IActionResult PostEdit(string id, string newId, string tags, bool isPage, string title, Guid? catalog, string content)
         {
             var post = DB.Posts
                 .Include(x => x.Tags)
