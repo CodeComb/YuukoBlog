@@ -6,7 +6,7 @@ Travis: [![Build status](https://travis-ci.org/CodeComb/YuukoBlog.svg)](https://
 
 - ASP.Net 5 Preview Beta 8
 - SQLite v3
-- DNX 4.5.1 / DNX Core 5
+- DNX 4.5.1 / DNX Core 5.0
 - Mvc 6
 - CodeComb.AspNet.Localization 2.0.0
 - CodeComb.AspNet.Extensions 2.0.0
