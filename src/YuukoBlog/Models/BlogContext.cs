@@ -21,7 +21,7 @@ namespace YuukoBlog.Models
         {
             base.OnModelCreating(modelBuilder);
 
-            modelBuilder.SetupBlob();
+            modelBuilder.SetupFiles();
 
             modelBuilder.Entity<Catalog>(e =>
             {

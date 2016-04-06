@@ -1810,6 +1810,8 @@ body {
 }
 
     .sidebar-about .face img {
+        width: 180px;
+        max-width: 100%;
         border-radius: 50%;
     }
 
@@ -2014,4 +2016,11 @@ td input[type="text"], td input[type="password"] {
 
 .post-nav-page-current a {
     color: #fff!important;
+}
+
+.mvp {
+    max-width: 100%;
+    text-align: center;
+    border-radius: 10px;
+    margin-top: 20px;
 }
