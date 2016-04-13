@@ -42,7 +42,7 @@
           "lib/net451/CodeComb.AspNet.Localization.dll": {}
         }
       },
-      "CodeComb.AspNet.Upload/2.0.0-rc1-final": {
+      "CodeComb.AspNet.Upload/2.0.0-rc1-final-2": {
         "type": "package",
         "dependencies": {
           "CodeComb.AspNet.Extensions": "2.0.0-rc1-final-3",
@@ -1982,7 +1982,7 @@
           "lib/dotnet5.4/CodeComb.AspNet.Localization.dll": {}
         }
       },
-      "CodeComb.AspNet.Upload/2.0.0-rc1-final": {
+      "CodeComb.AspNet.Upload/2.0.0-rc1-final-2": {
         "type": "package",
         "dependencies": {
           "CodeComb.AspNet.Extensions": "2.0.0-rc1-final-3",
@@ -4579,7 +4579,7 @@
           "lib/net451/CodeComb.AspNet.Localization.dll": {}
         }
       },
-      "CodeComb.AspNet.Upload/2.0.0-rc1-final": {
+      "CodeComb.AspNet.Upload/2.0.0-rc1-final-2": {
         "type": "package",
         "dependencies": {
           "CodeComb.AspNet.Extensions": "2.0.0-rc1-final-3",
@@ -6537,7 +6537,7 @@
           "lib/net451/CodeComb.AspNet.Localization.dll": {}
         }
       },
-      "CodeComb.AspNet.Upload/2.0.0-rc1-final": {
+      "CodeComb.AspNet.Upload/2.0.0-rc1-final-2": {
         "type": "package",
         "dependencies": {
           "CodeComb.AspNet.Extensions": "2.0.0-rc1-final-3",
@@ -8483,7 +8483,7 @@
           "lib/dotnet5.4/CodeComb.AspNet.Localization.dll": {}
         }
       },
-      "CodeComb.AspNet.Upload/2.0.0-rc1-final": {
+      "CodeComb.AspNet.Upload/2.0.0-rc1-final-2": {
         "type": "package",
         "dependencies": {
           "CodeComb.AspNet.Extensions": "2.0.0-rc1-final-3",
@@ -11618,7 +11618,7 @@
           "lib/dotnet5.4/CodeComb.AspNet.Localization.dll": {}
         }
       },
-      "CodeComb.AspNet.Upload/2.0.0-rc1-final": {
+      "CodeComb.AspNet.Upload/2.0.0-rc1-final-2": {
         "type": "package",
         "dependencies": {
           "CodeComb.AspNet.Extensions": "2.0.0-rc1-final-3",
@@ -14753,12 +14753,12 @@
         "lib/net451/CodeComb.AspNet.Localization.xml"
       ]
     },
-    "CodeComb.AspNet.Upload/2.0.0-rc1-final": {
+    "CodeComb.AspNet.Upload/2.0.0-rc1-final-2": {
       "type": "package",
-      "sha512": "ba/pWk7F+LjpTwQtYpbRdCR3KUs1RLEnx5E996PEt2CdD1sFq5EvDF2eNvNFAHTeWzQlYz1YyYpgzj+jCUQ6tA==",
+      "sha512": "w59oydcLPMbrjgkOPjAc4yKlZgnVcc8IMBwR8JIn1G5DHXnYWR4qW8WpPnG+mhAg+T59zqepMWb7t8F9LEITZA==",
       "files": [
-        "CodeComb.AspNet.Upload.2.0.0-rc1-final.nupkg",
-        "CodeComb.AspNet.Upload.2.0.0-rc1-final.nupkg.sha512",
+        "CodeComb.AspNet.Upload.2.0.0-rc1-final-2.nupkg",
+        "CodeComb.AspNet.Upload.2.0.0-rc1-final-2.nupkg.sha512",
         "CodeComb.AspNet.Upload.nuspec",
         "lib/dotnet5.4/CodeComb.AspNet.Upload.dll",
         "lib/dotnet5.4/CodeComb.AspNet.Upload.xml",
@@ -20369,7 +20369,7 @@
       "Microsoft.AspNet.Server.Kestrel >= 1.0.0-rc1-final",
       "CodeComb.AspNet.Localization >= 2.0.0-rc1-final",
       "CodeComb.AspNet.Extensions >= 2.0.0-rc1-final-3",
-      "CodeComb.AspNet.Upload >= 2.0.0-rc1-final",
+      "CodeComb.AspNet.Upload >= 2.0.0-rc1-final-2",
       "CodeComb.Marked >= 2.0.0-rc1-final",
       "Microsoft.AspNet.Mvc >= 6.0.0-rc1-final",
       "Microsoft.AspNet.Session >= 1.0.0-rc1-final",
