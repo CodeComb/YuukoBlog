@@ -987,3 +987,18 @@ function popResult(txt) {
         }, 400);
     }, 2600);
 }
+
+function showQrCode() {
+    $('.qrcode').addClass('qrcode-active');
+}
+
+$(document).ready(function () {
+    var url = $('#qrcode').attr('data-url');
+    $('#qrcode').qrcode(url);
+    $(window).click(function (e) {
+        if ($('.qrcode-active').length > 0) {
+            if ($(e.target).parents('.qrcode').length == 0 && !$(e.target).hasClass('qrcode'))
+                $('.qrcode').removeClass('qrcode-active');
+        }
+    });
+});

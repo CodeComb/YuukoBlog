@@ -55,10 +55,21 @@
                 </div>
                 }
             </div>
+            <div class="community-sharing">
+                <span>@SR["Share to:"]</span> 
+                <div class="community-sharing-links">
+                    <a href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?showcount=0&desc=&summary=&url=@(Context.Request.Scheme + "://" + Context.Request.Host + Context.Request.Path)&Title=@Model.Title&Site=@("Amamiya Yuuko\'s ebullient future")"><img src="~/assets/Default/images/qzone.png" /></a>
+                    <a href="javascript:showQrCode();"><img src="~/assets/Default/images/wechat.png" /></a>
+                </div>
+            </div>
             <div class="comments">
                 <h2>Comments</h2>
                 <div id="disqus_thread"></div>
             </div>
+        </div>
+        <div class="qrcode">
+            <div id="qrcode" data-url="@(Context.Request.Scheme + "://" + Context.Request.Host + Context.Request.Path)"></div>
+            <span>使用微信扫码</span>
         </div>
         @Html.Partial("Sidebar")
     </div>
